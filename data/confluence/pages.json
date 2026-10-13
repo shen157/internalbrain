@@ -1,0 +1,344 @@
+[
+  {
+    "id": "CONF-PAY-001",
+    "spaceId": "ENG",
+    "status": "current",
+    "title": "Payment Migration Architecture",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Overview</h2><p>The payment platform is being migrated from the legacy Oracle schema to PostgreSQL. Owner team: payment-team. Tracking epic: PAY-101.</p><h2>Schedule</h2><p><strong>Original target cutover: 2026-10-15</strong> (set in v3, 2026-09-20).</p><p><strong>Revised target cutover: 2026-11-05</strong> (v6, 2026-10-01) because of PAY-102 (schema incompatibility) and PAY-103 (authentication timeouts during staging validation).</p><h2>Architecture</h2><p>A dual-stack writer with a one-way backfill job (PAY-104) keeps the legacy and PostgreSQL stores consistent before the atomic cutover. Rollback procedure lives in CONF-PAY-002.</p><h2>Related artefacts</h2><p>Jira: PAY-101, PAY-102, PAY-103, PAY-104, PAY-105. Drive: GDRIVE-PAY-001, GDRIVE-PAY-002, GDRIVE-PAY-003. Slack: #payment-migration.</p>"
+    },
+    "version": {
+      "number": 6,
+      "message": "Revised cutover target from 2026-10-15 to 2026-11-05 after PAY-102 and PAY-103.",
+      "createdAt": "2026-10-01T09:15:00Z",
+      "authorId": "u006"
+    },
+    "_links": {
+      "webui": "/spaces/ENG/pages/CONF-PAY-001"
+    }
+  },
+  {
+    "id": "CONF-PAY-002",
+    "spaceId": "ENG",
+    "status": "current",
+    "title": "Payment Migration Runbook",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Pre-cutover checklist</h2><p>See PAY-105 for the cutover checklist. Freeze writes to the legacy schema 60 minutes before the window.</p><h2>Rollback</h2><p>Step 1: stop the dual-stack writer. Step 2: revert the application config flag. Step 3: replay the last 60 minutes of writes from the PostgreSQL change log. Added in v4 for the nullable-column incompatibility raised in PAY-102.</p><h2>Known issues</h2><p>Nullable-column divergence between legacy and PostgreSQL is tracked in PAY-102 and is not yet resolved. Authentication validation latency (PAY-103) must be green before the window opens.</p><h2>Last reviewed</h2><p>2026-09-28 by the payment-team.</p>"
+    },
+    "version": {
+      "number": 4,
+      "message": "Added rollback steps for the nullable-column incompatibility (PAY-102).",
+      "createdAt": "2026-09-28T10:20:00Z",
+      "authorId": "u001"
+    },
+    "_links": {
+      "webui": "/spaces/ENG/pages/CONF-PAY-002"
+    }
+  },
+  {
+    "id": "CONF-PAY-003",
+    "spaceId": "ENG",
+    "status": "current",
+    "title": "Payment Migration Risk Assessment",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Top risks</h2><ol><li><strong>Schema incompatibility</strong> (PAY-102) - high. Blocks the cutover. Mitigation: one-way backfill job PAY-104.</li><li><strong>Authentication validation latency</strong> (PAY-103, AUTH-201) - high. p99 of 4.2s on /validate observed in staging.</li><li><strong>Historical data backfill duration</strong> - medium. Estimated 14 hours.</li></ol><h2>Residual risk after mitigation</h2><p>Medium. Recommend a second dry run before 2026-11-05.</p>"
+    },
+    "version": {
+      "number": 2,
+      "message": "Raised schema incompatibility to the top risk after PAY-102.",
+      "createdAt": "2026-09-29T16:40:00Z",
+      "authorId": "u003"
+    },
+    "_links": {
+      "webui": "/spaces/ENG/pages/CONF-PAY-003"
+    }
+  },
+  {
+    "id": "CONF-ENG-001",
+    "spaceId": "ENG",
+    "status": "current",
+    "title": "Engineering Onboarding Guide",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Day one</h2><p>Request repository access through the engineering access form. Set up the local development environment using the bootstrap script in the platform repository.</p><h2>Shared services</h2><p>Authentication and session handling are provided by the auth service; see CONF-AUTH-001 for the current upgrade work.</p><h2>Where to ask</h2><p>#engineering on Slack for general questions, #payment-migration for payment platform work.</p>"
+    },
+    "version": {
+      "number": 5,
+      "message": "Added pointer to the authentication service upgrade.",
+      "createdAt": "2026-09-18T14:30:00Z",
+      "authorId": "u003"
+    },
+    "_links": {
+      "webui": "/spaces/ENG/pages/CONF-ENG-001"
+    }
+  },
+  {
+    "id": "CONF-AUTH-001",
+    "spaceId": "ENG",
+    "status": "current",
+    "title": "Authentication Service Upgrade Plan",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Goal</h2><p>Move the authentication service from legacy session tokens to OAuth 2.1 with short-lived JWTs. Tracking issue: AUTH-201.</p><h2>Workstreams</h2><ul><li>AUTH-202 - JWT signing key rotation (restricted details, security-team only).</li><li>AUTH-203 - deprecate legacy session tokens.</li><li>AUTH-204 - load test at 3x peak traffic.</li></ul><h2>Impact on other projects</h2><p>Payment staging validation depends on the new validation path; see PAY-103.</p><h2>Rollout</h2><p>Feature-flagged rollout behind the auth-v2 flag, starting the sprint of 2026-09-28.</p>"
+    },
+    "version": {
+      "number": 3,
+      "message": "Linked the payment staging dependency (PAY-103).",
+      "createdAt": "2026-09-27T12:00:00Z",
+      "authorId": "u002"
+    },
+    "_links": {
+      "webui": "/spaces/ENG/pages/CONF-AUTH-001"
+    }
+  },
+  {
+    "id": "CONF-AUTH-002",
+    "spaceId": "ENG",
+    "status": "current",
+    "title": "Authentication Rollout Timeline",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Milestones</h2><ul><li>2026-09-28 - auth-v2 feature flag enabled in staging.</li><li>2026-10-02 - legacy session token deprecation completed (AUTH-203).</li><li>2026-10-03 - signing key rotation window (AUTH-202).</li><li>2026-11-07 - fallback path removal.</li></ul><p>Raw latency figures from the load test are in GDRIVE-AUTH-002.</p>"
+    },
+    "version": {
+      "number": 2,
+      "message": "Updated milestone dates after AUTH-203 completed.",
+      "createdAt": "2026-09-30T11:20:00Z",
+      "authorId": "u002"
+    },
+    "_links": {
+      "webui": "/spaces/ENG/pages/CONF-AUTH-002"
+    }
+  },
+  {
+    "id": "CONF-SEC-001",
+    "spaceId": "SEC",
+    "status": "current",
+    "title": "Q3 Security Incident Postmortem (INC-2026-Q3-01)",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Summary</h2><p>A stale service account retained cluster-admin rights in the staging cluster and was used to escalate privileges on 2026-09-11. No production data was accessed.</p><h2>Timeline</h2><p>Detected 2026-09-11T22:40Z by an anomaly alert. Contained 2026-09-12T02:10Z. Postmortem held 2026-09-16.</p><h2>Root cause</h2><p>Offboarding workflow did not revoke cluster-scoped bindings for service accounts. Tracked as SEC-004.</p><h2>Actions</h2><ul><li>SEC-005 - privileged access audit logging.</li><li>SEC-006 - contractor production access review.</li></ul><h2>Distribution</h2><p>Security-team only. Do not forward outside this space.</p>"
+    },
+    "version": {
+      "number": 2,
+      "message": "Added the two follow-up actions (SEC-005, SEC-006).",
+      "createdAt": "2026-09-16T17:30:00Z",
+      "authorId": "u002"
+    },
+    "_links": {
+      "webui": "/spaces/SEC/pages/CONF-SEC-001"
+    }
+  },
+  {
+    "id": "CONF-SEC-002",
+    "spaceId": "SEC",
+    "status": "current",
+    "title": "Privileged Access Review Q3",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Scope</h2><p>Review of all cluster-admin and production database bindings held in Q3 2026.</p><h2>Findings</h2><p>3 stale bindings found, 2 revoked, 1 pending vendor confirmation. The external contractor account (u007) holds read-only staging access only and was not implicated.</p><h2>Compliance evidence</h2><p>Exported for the compliance review; see GDRIVE-SEC-002.</p>"
+    },
+    "version": {
+      "number": 1,
+      "message": "Initial review published.",
+      "createdAt": "2026-09-17T09:15:00Z",
+      "authorId": "u002"
+    },
+    "_links": {
+      "webui": "/spaces/SEC/pages/CONF-SEC-002"
+    }
+  },
+  {
+    "id": "CONF-FIN-001",
+    "spaceId": "FIN",
+    "status": "current",
+    "title": "Q4 Financial Planning",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Summary</h2><p>Q4 2026 planning covers headcount, infrastructure and vendor spend. Forecast workbook: CONF-FIN-002 and GDRIVE-FIN-001.</p><h2>Key movements</h2><ul><li>Infrastructure spend increases in Q4 for the authentication service upgrade (AUTH-201).</li><li>The payment migration delay moves approximately 40k of infrastructure spend from Q4 into Q1 2027.</li><li>Vendor spend restated by category after the compliance review.</li></ul><h2>Approvals</h2><p>Pending leadership sign-off at the October review.</p>"
+    },
+    "version": {
+      "number": 5,
+      "message": "Restated vendor spend by category; shifted 40k infrastructure spend to Q1 2027.",
+      "createdAt": "2026-09-26T15:00:00Z",
+      "authorId": "u004"
+    },
+    "_links": {
+      "webui": "/spaces/FIN/pages/CONF-FIN-001"
+    }
+  },
+  {
+    "id": "CONF-FIN-002",
+    "spaceId": "FIN",
+    "status": "current",
+    "title": "Q4 Budget Forecast (Draft)",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Status</h2><p>Draft. Numbers are not final until leadership sign-off on CONF-FIN-001.</p><h2>Open items</h2><p>Vendor category mapping for the compliance restatement. Infrastructure delta from AUTH-201 not yet confirmed.</p>"
+    },
+    "version": {
+      "number": 3,
+      "message": "Draft refresh after vendor category feedback.",
+      "createdAt": "2026-09-25T11:45:00Z",
+      "authorId": "u004"
+    },
+    "_links": {
+      "webui": "/spaces/FIN/pages/CONF-FIN-002"
+    }
+  },
+  {
+    "id": "CONF-HR-001",
+    "spaceId": "HR",
+    "status": "current",
+    "title": "Employee Handbook 2026",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Welcome</h2><p>This handbook covers working hours, expenses, leave, and conduct expectations for all employees.</p><h2>Leave</h2><p>Annual leave entitlement is 25 days plus public holidays. Requests go through the HR system.</p><h2>Expenses</h2><p>Submit expenses within 30 days. Travel above 1000 requires manager approval.</p><h2>Questions</h2><p>Contact the HR team or post in #general.</p>"
+    },
+    "version": {
+      "number": 7,
+      "message": "Annual 2026 review; updated leave entitlement and expense window.",
+      "createdAt": "2026-09-29T09:30:00Z",
+      "authorId": "u008"
+    },
+    "_links": {
+      "webui": "/spaces/HR/pages/CONF-HR-001"
+    }
+  },
+  {
+    "id": "CONF-HR-002",
+    "spaceId": "HR",
+    "status": "current",
+    "title": "Remote Work Policy",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Policy</h2><p>Employees may work remotely up to 3 days per week with manager approval. Fully remote arrangements require a documented exception.</p><h2>Equipment</h2><p>A one-time home office allowance is available. Contractors are covered by their agency agreement, not this policy.</p>"
+    },
+    "version": {
+      "number": 4,
+      "message": "Clarified that contractor equipment is out of scope.",
+      "createdAt": "2026-09-29T09:40:00Z",
+      "authorId": "u008"
+    },
+    "_links": {
+      "webui": "/spaces/HR/pages/CONF-HR-002"
+    }
+  },
+  {
+    "id": "CONF-ENG-002",
+    "spaceId": "ENG",
+    "status": "current",
+    "title": "Data Platform PostgreSQL Migration Plan",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Overview</h2><p>This plan covers the analytics warehouse migration from Oracle to PostgreSQL, tracked as DP-301. It is the data platform workstream and is separate from the payment platform migration (PAY-101).</p><h2>Scope</h2><p>Event tables, reporting schemas and the batch ETL layer. Historical analytics events are backfilled under DP-302.</p><h2>Status</h2><p>In progress since 2026-09-08. No blockers currently.</p>"
+    },
+    "version": {
+      "number": 2,
+      "message": "Scoped the analytics event backfill (DP-302).",
+      "createdAt": "2026-09-22T14:00:00Z",
+      "authorId": "u001"
+    },
+    "_links": {
+      "webui": "/spaces/ENG/pages/CONF-ENG-002"
+    }
+  },
+  {
+    "id": "CONF-ENG-003",
+    "spaceId": "ENG",
+    "status": "current",
+    "title": "Identity Provider Migration Retrospective",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Context</h2><p>Retrospective for the 2025 identity provider migration, completed ahead of schedule with no customer impact.</p><h2>What worked</h2><ul><li>Dual-run period of two weeks.</li><li>Cutover checklist rehearsed twice.</li></ul><h2>Lessons</h2><p>Keep a named rollback owner in the runbook. Historical record only; unrelated to current projects.</p>"
+    },
+    "version": {
+      "number": 1,
+      "message": "Initial retrospective published.",
+      "createdAt": "2026-09-05T10:00:00Z",
+      "authorId": "u002"
+    },
+    "_links": {
+      "webui": "/spaces/ENG/pages/CONF-ENG-003"
+    }
+  },
+  {
+    "id": "CONF-PAY-004",
+    "spaceId": "ENG",
+    "status": "current",
+    "title": "Merchant Payment Onboarding Guide",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Audience</h2><p>Integration engineers onboarding new merchants to the existing payment platform.</p><h2>Steps</h2><ol><li>Collect merchant KYC documents.</li><li>Provision sandbox credentials.</li><li>Run test transactions.</li><li>Enable production.</li></ol><p>This covers merchant onboarding only and is not part of the platform migration (PAY-101).</p>"
+    },
+    "version": {
+      "number": 3,
+      "message": "Added the KYC document list.",
+      "createdAt": "2026-09-12T11:30:00Z",
+      "authorId": "u006"
+    },
+    "_links": {
+      "webui": "/spaces/ENG/pages/CONF-PAY-004"
+    }
+  },
+  {
+    "id": "CONF-SEC-003",
+    "spaceId": "SEC",
+    "status": "current",
+    "title": "Information Security Policy",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Purpose</h2><p>Company-wide information security policy covering access control, data classification and reporting obligations.</p><h2>Access control</h2><p>Access is granted on a least-privilege basis and reviewed quarterly.</p><h2>Incidents</h2><p>Suspected incidents are reported to the security team. Incident-specific records are handled under the incident response process and are not part of this policy document.</p>"
+    },
+    "version": {
+      "number": 4,
+      "message": "Annual review of the access control section.",
+      "createdAt": "2026-09-02T09:00:00Z",
+      "authorId": "u002"
+    },
+    "_links": {
+      "webui": "/spaces/SEC/pages/CONF-SEC-003"
+    }
+  },
+  {
+    "id": "CONF-HR-003",
+    "spaceId": "HR",
+    "status": "current",
+    "title": "Security Awareness Training Policy",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Policy</h2><p>All employees complete annual security awareness training. Enrollment for the 2026 program is tracked as SEC-007 and the slides are shared as GDRIVE-HR-002.</p><h2>Compliance</h2><p>Completion is reported to the compliance officer at quarter end.</p>"
+    },
+    "version": {
+      "number": 2,
+      "message": "Linked the 2026 enrollment tracking issue.",
+      "createdAt": "2026-09-29T10:30:00Z",
+      "authorId": "u008"
+    },
+    "_links": {
+      "webui": "/spaces/HR/pages/CONF-HR-003"
+    }
+  },
+  {
+    "id": "CONF-FIN-003",
+    "spaceId": "FIN",
+    "status": "current",
+    "title": "Q3 Business Review",
+    "body": {
+      "representation": "storage",
+      "value": "<h2>Summary</h2><p>Q3 2026 business review covering revenue, pipeline and headcount. The deck is GDRIVE-FIN-002.</p><h2>Notes</h2><p>The Q3 security incident is out of scope for this review and is handled separately by the security team. Q4 planning continues in CONF-FIN-001.</p>"
+    },
+    "version": {
+      "number": 1,
+      "message": "Initial Q3 review published.",
+      "createdAt": "2026-09-30T16:25:00Z",
+      "authorId": "u004"
+    },
+    "_links": {
+      "webui": "/spaces/FIN/pages/CONF-FIN-003"
+    }
+  }
+]

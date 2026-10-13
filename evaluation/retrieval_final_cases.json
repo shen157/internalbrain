@@ -1,0 +1,327 @@
+[
+  {
+    "test_id": "FINAL-RET-001",
+    "category": "payment",
+    "user_id": "u001",
+    "query": "What is the revised payment migration cutover date and why was it moved?",
+    "expected_sources": [
+      "CONF-PAY-001",
+      "GDRIVE-PAY-001",
+      "C-PAY:2026-10-01T08:30:00Z"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-002",
+    "category": "payment",
+    "user_id": "u001",
+    "query": "Which payment migration issue is caused by nullable column incompatibility?",
+    "expected_sources": [
+      "PAY-102",
+      "GDRIVE-PAY-003",
+      "C-PAY:2026-09-24T13:40:00Z"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-003",
+    "category": "payment",
+    "user_id": "u001",
+    "query": "What are the rollback steps for the payment migration cutover?",
+    "expected_sources": [
+      "CONF-PAY-002",
+      "GDRIVE-PAY-004",
+      "PAY-105"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-004",
+    "category": "payment",
+    "user_id": "u001",
+    "query": "How long is the historical payment backfill expected to take?",
+    "expected_sources": [
+      "PAY-104",
+      "CONF-PAY-003",
+      "GDRIVE-PAY-002"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-005",
+    "category": "payment",
+    "user_id": "u001",
+    "query": "What caused the 4.2 second p99 authentication latency during payment staging validation?",
+    "expected_sources": [
+      "PAY-103",
+      "GDRIVE-AUTH-002",
+      "C-PAY:2026-09-30T15:40:00Z"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-006",
+    "category": "payment",
+    "user_id": "u001",
+    "query": "Where can I find merchant onboarding steps for the payment gateway?",
+    "expected_sources": [
+      "CONF-PAY-004",
+      "GDRIVE-PAY-005",
+      "PAY-106"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-007",
+    "category": "authentication",
+    "user_id": "u002",
+    "query": "What is the plan for moving authentication to OAuth 2.1 and short-lived JWTs?",
+    "expected_sources": [
+      "AUTH-201",
+      "CONF-AUTH-001",
+      "GDRIVE-AUTH-001"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-008",
+    "category": "authentication",
+    "user_id": "u002",
+    "query": "When was the JWT signing key rotation scheduled and completed?",
+    "expected_sources": [
+      "AUTH-202",
+      "CONF-AUTH-002",
+      "C-SEC:2026-09-16T09:05:00Z"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-009",
+    "category": "authentication",
+    "user_id": "u002",
+    "query": "What did the authentication load test show at three times peak traffic?",
+    "expected_sources": [
+      "AUTH-204",
+      "GDRIVE-AUTH-002",
+      "C-ENG:2026-09-27T11:45:00Z"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-010",
+    "category": "authentication",
+    "user_id": "u001",
+    "query": "When were legacy session tokens deprecated and when is the fallback path removed?",
+    "expected_sources": [
+      "AUTH-203",
+      "CONF-AUTH-002",
+      "C-ENG:2026-10-02T13:10:00Z"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-011",
+    "category": "security",
+    "user_id": "u002",
+    "query": "What caused the Q3 privilege escalation incident involving the stale service account?",
+    "expected_sources": [
+      "SEC-004",
+      "CONF-SEC-001",
+      "GDRIVE-SEC-001"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-012",
+    "category": "security",
+    "user_id": "u005",
+    "query": "What did the Q3 privileged access review find about stale bindings and contractor access?",
+    "expected_sources": [
+      "CONF-SEC-002",
+      "GDRIVE-SEC-002",
+      "SEC-006"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-013",
+    "category": "security_training",
+    "user_id": "u008",
+    "query": "Where can employees find the 2026 security awareness training policy and slides?",
+    "expected_sources": [
+      "CONF-HR-003",
+      "GDRIVE-HR-002",
+      "SEC-007"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-014",
+    "category": "finance",
+    "user_id": "u004",
+    "query": "How did the payment migration delay affect Q4 infrastructure spending?",
+    "expected_sources": [
+      "CONF-FIN-001",
+      "GDRIVE-FIN-001",
+      "C-FIN:2026-09-26T10:05:00Z"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-015",
+    "category": "finance",
+    "user_id": "u004",
+    "query": "Where is the Q3 business review covering revenue pipeline and headcount?",
+    "expected_sources": [
+      "CONF-FIN-003",
+      "GDRIVE-FIN-002",
+      "C-FIN:2026-09-30T16:30:00Z"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-016",
+    "category": "finance",
+    "user_id": "u004",
+    "query": "What open items remain in the Q4 budget forecast draft?",
+    "expected_sources": [
+      "CONF-FIN-002"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-017",
+    "category": "hr",
+    "user_id": "u008",
+    "query": "How many annual leave days do employees receive?",
+    "expected_sources": [
+      "CONF-HR-001",
+      "GDRIVE-HR-001"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-018",
+    "category": "hr",
+    "user_id": "u008",
+    "query": "How many days per week can employees work remotely with manager approval?",
+    "expected_sources": [
+      "CONF-HR-002"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-019",
+    "category": "data_platform",
+    "user_id": "u001",
+    "query": "What project is migrating the analytics warehouse from Oracle to PostgreSQL?",
+    "expected_sources": [
+      "CONF-ENG-002",
+      "DP-301",
+      "C-ENG:2026-09-22T15:30:00Z"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-020",
+    "category": "data_platform",
+    "user_id": "u001",
+    "query": "Which issue tracks the five-year historical analytics event backfill?",
+    "expected_sources": [
+      "DP-302"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-021",
+    "category": "engineering",
+    "user_id": "u007",
+    "query": "What onboarding checklist is available for approved engineering contractors?",
+    "expected_sources": [
+      "CONF-ENG-001",
+      "GDRIVE-ENG-001"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-022",
+    "category": "shared",
+    "user_id": "u008",
+    "query": "Is there a generic service migration cutover checklist template?",
+    "expected_sources": [
+      "GDRIVE-SHARED-001"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-023",
+    "category": "shared",
+    "user_id": "u008",
+    "query": "What were the October all-hands updates about payment migration authentication and security training?",
+    "expected_sources": [
+      "GDRIVE-SHARED-002"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-024",
+    "category": "cross_source",
+    "user_id": "u003",
+    "query": "Summarize the two main blockers currently delaying the payment migration.",
+    "expected_sources": [
+      "PAY-102",
+      "PAY-103",
+      "CONF-PAY-003",
+      "GDRIVE-PAY-002"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "FINAL-RET-025",
+    "category": "negative_security",
+    "user_id": "u007",
+    "query": "Which stale service account retained cluster-admin and caused the staging privilege escalation?",
+    "expected_sources": [],
+    "expect_no_results": true
+  },
+  {
+    "test_id": "FINAL-RET-026",
+    "category": "negative_security",
+    "user_id": "u007",
+    "query": "How many stale privileged bindings were found, revoked, and left pending vendor confirmation?",
+    "expected_sources": [],
+    "expect_no_results": true
+  },
+  {
+    "test_id": "FINAL-RET-027",
+    "category": "negative_finance",
+    "user_id": "u001",
+    "query": "What are the 2027 salary bands bonus pool and equity refresh scenarios?",
+    "expected_sources": [],
+    "expect_no_results": true
+  },
+  {
+    "test_id": "FINAL-RET-028",
+    "category": "negative_finance",
+    "user_id": "u008",
+    "query": "What vendor category mapping remains open in the Q4 budget forecast compliance restatement?",
+    "expected_sources": [],
+    "expect_no_results": true
+  },
+  {
+    "test_id": "FINAL-RET-029",
+    "category": "negative_auth",
+    "user_id": "u008",
+    "query": "What caused the legacy session validate endpoint to reach p99 4.2 seconds during staging timeouts?",
+    "expected_sources": [],
+    "expect_no_results": true
+  },
+  {
+    "test_id": "FINAL-RET-030",
+    "category": "negative_payment",
+    "user_id": "u004",
+    "query": "Which nullable payment columns caused failures across more than twelve thousand historical rows?",
+    "expected_sources": [],
+    "expect_no_results": true
+  }
+]

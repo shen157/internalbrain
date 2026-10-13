@@ -1,0 +1,247 @@
+[
+  {
+    "ts": "2026-09-14T09:10:00Z",
+    "channel_id": "C-PAY",
+    "user": "u006",
+    "text": "Kicking off the payment migration. Architecture doc is CONF-PAY-001 on Confluence. Original target cutover was 2026-10-15.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-14T09:25:00Z",
+    "channel_id": "C-PAY",
+    "user": "u001",
+    "text": "Read it. PAY-101 (schema migration to PostgreSQL) is in progress on my side.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-14T09:31:00Z",
+    "channel_id": "C-PAY",
+    "user": "u003",
+    "text": "Risk assessment draft is up as CONF-PAY-003. It is restricted to the core payment team for now.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-24T13:40:00Z",
+    "channel_id": "C-PAY",
+    "user": "u001",
+    "text": "Blocker: the legacy and PostgreSQL schemas disagree on nullable columns. Filed PAY-102.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-24T13:52:00Z",
+    "channel_id": "C-PAY",
+    "user": "u006",
+    "text": "Could we run a dual-write phase to bridge the gap?",
+    "thread_ts": "2026-09-24T13:40:00Z"
+  },
+  {
+    "ts": "2026-09-24T14:05:00Z",
+    "channel_id": "C-PAY",
+    "user": "u001",
+    "text": "Dual-write doubles the rollback surface. I would rather do a one-way backfill, that is PAY-104.",
+    "thread_ts": "2026-09-24T13:40:00Z"
+  },
+  {
+    "ts": "2026-09-28T10:20:00Z",
+    "channel_id": "C-PAY",
+    "user": "u003",
+    "text": "Runbook updated to v4 with the new rollback steps: CONF-PAY-002.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-29T16:45:00Z",
+    "channel_id": "C-PAY",
+    "user": "u003",
+    "text": "Risk assessment is now v2 (CONF-PAY-003). Schema incompatibility is the top risk.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-30T15:10:00Z",
+    "channel_id": "C-PAY",
+    "user": "u006",
+    "text": "Authentication timeouts appeared during staging validation. Tracked as PAY-103.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-30T15:22:00Z",
+    "channel_id": "C-PAY",
+    "user": "u002",
+    "text": "That looks like validation latency on the legacy session service. Related to AUTH-201.",
+    "thread_ts": "2026-09-30T15:10:00Z"
+  },
+  {
+    "ts": "2026-09-30T15:40:00Z",
+    "channel_id": "C-PAY",
+    "user": "u001",
+    "text": "Confirmed - p99 of 4.2s on /validate. This blocks the cutover.",
+    "thread_ts": "2026-09-30T15:10:00Z"
+  },
+  {
+    "ts": "2026-09-30T16:05:00Z",
+    "channel_id": "C-PAY",
+    "user": "u002",
+    "text": "We can enable the new OAuth 2.1 validation path behind a flag and re-test.",
+    "thread_ts": "2026-09-30T15:10:00Z"
+  },
+  {
+    "ts": "2026-10-01T08:30:00Z",
+    "channel_id": "C-PAY",
+    "user": "u006",
+    "text": "Given PAY-102 and PAY-103, the revised cutover target is 2026-11-05. CONF-PAY-001 is updated to v6 and the Drive timeline GDRIVE-PAY-001 is revised.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-10-01T08:44:00Z",
+    "channel_id": "C-PAY",
+    "user": "u007",
+    "text": "Do I have access to the risk assessment? I can only open CONF-PAY-001.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-10-01T08:50:00Z",
+    "channel_id": "C-PAY",
+    "user": "u003",
+    "text": "CONF-PAY-002 and CONF-PAY-003 are restricted to the core payment team. I will share the relevant extract with you directly.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-12T10:50:00Z",
+    "channel_id": "C-SEC",
+    "user": "u002",
+    "text": "Opening this channel for the Q3 incident. Draft postmortem is CONF-SEC-001.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-12T11:05:00Z",
+    "channel_id": "C-SEC",
+    "user": "u003",
+    "text": "How did the escalation happen?",
+    "thread_ts": "2026-09-12T10:50:00Z"
+  },
+  {
+    "ts": "2026-09-12T11:18:00Z",
+    "channel_id": "C-SEC",
+    "user": "u002",
+    "text": "A stale service account still had cluster-admin in staging. Full write-up is issue SEC-004.",
+    "thread_ts": "2026-09-12T10:50:00Z"
+  },
+  {
+    "ts": "2026-09-15T16:20:00Z",
+    "channel_id": "C-SEC",
+    "user": "u002",
+    "text": "Remediation is tracked in SEC-005 (privileged access audit logging) and SEC-006 (contractor production access review).",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-16T09:05:00Z",
+    "channel_id": "C-SEC",
+    "user": "u002",
+    "text": "Auth signing key rotation is scheduled as AUTH-202. Details stay in this channel.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-25T14:00:00Z",
+    "channel_id": "C-FIN",
+    "user": "u004",
+    "text": "Q4 planning draft is up: CONF-FIN-001. The forecast workbook is CONF-FIN-002.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-26T10:05:00Z",
+    "channel_id": "C-FIN",
+    "user": "u003",
+    "text": "The payment migration delay pushes roughly 40k of infrastructure spend from Q4 into Q1. I will flag it to leadership.",
+    "thread_ts": "2026-09-25T14:00:00Z"
+  },
+  {
+    "ts": "2026-09-29T10:00:00Z",
+    "channel_id": "C-GEN",
+    "user": "u008",
+    "text": "Employee Handbook 2026 (CONF-HR-001) and the Remote Work Policy (CONF-HR-002) were updated today.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-29T10:15:00Z",
+    "channel_id": "C-GEN",
+    "user": "u007",
+    "text": "Are these documents available to contractors?",
+    "thread_ts": "2026-09-29T10:00:00Z"
+  },
+  {
+    "ts": "2026-09-29T10:22:00Z",
+    "channel_id": "C-GEN",
+    "user": "u008",
+    "text": "They are published to all employees. Contractor guidance comes from your agency agreement.",
+    "thread_ts": "2026-09-29T10:00:00Z"
+  },
+  {
+    "ts": "2026-10-02T09:00:00Z",
+    "channel_id": "C-GEN",
+    "user": "u006",
+    "text": "Payment migration cutover moved to 2026-11-05 - details in #payment-migration.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-27T11:30:00Z",
+    "channel_id": "C-ENG",
+    "user": "u001",
+    "text": "AUTH-201 (OAuth 2.1 upgrade) starts next sprint.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-27T11:45:00Z",
+    "channel_id": "C-ENG",
+    "user": "u003",
+    "text": "We need a load test before rollout - filed AUTH-204.",
+    "thread_ts": "2026-09-27T11:30:00Z"
+  },
+  {
+    "ts": "2026-10-02T13:10:00Z",
+    "channel_id": "C-ENG",
+    "user": "u002",
+    "text": "AUTH-203 is done - legacy session tokens are deprecated, the fallback path is removed in November.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-10-03T08:45:00Z",
+    "channel_id": "C-ENG",
+    "user": "u002",
+    "text": "AUTH-202 signing key rotation completed this morning.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-22T15:30:00Z",
+    "channel_id": "C-ENG",
+    "user": "u001",
+    "text": "DP-301 kickoff: the analytics warehouse is also moving to PostgreSQL. Plan is CONF-ENG-002. This is the data platform workstream, separate from the payment migration.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-30T09:15:00Z",
+    "channel_id": "C-GEN",
+    "user": "u008",
+    "text": "Security awareness training enrollment is open. Policy: CONF-HR-003, tracking: SEC-007.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-09-30T09:25:00Z",
+    "channel_id": "C-GEN",
+    "user": "u002",
+    "text": "Sessions run weekly and the slides live at GDRIVE-HR-002.",
+    "thread_ts": "2026-09-30T09:15:00Z"
+  },
+  {
+    "ts": "2026-09-30T16:30:00Z",
+    "channel_id": "C-FIN",
+    "user": "u004",
+    "text": "Q3 business review deck is ready: GDRIVE-FIN-002. Summary page: CONF-FIN-003.",
+    "thread_ts": null
+  },
+  {
+    "ts": "2026-10-01T09:10:00Z",
+    "channel_id": "C-ENG",
+    "user": "u002",
+    "text": "AUTH-205 done - the updated auth SDK documentation is published.",
+    "thread_ts": null
+  }
+]

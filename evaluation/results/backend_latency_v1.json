@@ -1,0 +1,70 @@
+{
+  "version": "backend_latency_v1",
+  "resource_count": 88,
+  "authorization_latency": {
+    "count": 100,
+    "min_ms": 0.15630002599209547,
+    "mean_ms": 0.20221300306729972,
+    "p50_ms": 0.1993000041693449,
+    "p95_ms": 0.3011099703144282,
+    "max_ms": 0.35740004386752844
+  },
+  "hybrid_retrieval_latency": {
+    "count": 25,
+    "min_ms": 171.35730001609772,
+    "mean_ms": 731.8980720033869,
+    "p50_ms": 830.6527000386268,
+    "p95_ms": 940.2185800718144,
+    "max_ms": 970.7354999845847
+  },
+  "backend_e2e_latency": {
+    "latency": {
+      "count": 15,
+      "min_ms": 416.9629999669269,
+      "mean_ms": 920.380373345688,
+      "p50_ms": 1047.9088999563828,
+      "p95_ms": 1094.0012800158001,
+      "max_ms": 1095.4002999933437
+    },
+    "successful_requests": 15,
+    "total_requests": 15,
+    "success_rate": 1.0,
+    "llm": "deterministic test double; remote model latency excluded"
+  },
+  "live_permission_change": {
+    "grant_api_latency": {
+      "count": 10,
+      "min_ms": 16.7537999805063,
+      "mean_ms": 20.085189980454743,
+      "p50_ms": 19.392349990084767,
+      "p95_ms": 25.17078994424082,
+      "max_ms": 26.59629995469004
+    },
+    "permission_propagation_latency": {
+      "count": 10,
+      "min_ms": 394.58289998583496,
+      "mean_ms": 408.1631000037305,
+      "p50_ms": 400.12495004339144,
+      "p95_ms": 447.38062998512754,
+      "max_ms": 472.2065000096336
+    },
+    "propagation_success_rate": 1.0,
+    "reindex_required": false,
+    "baseline_restored": true
+  },
+  "real_llm_e2e_latency": {
+    "latency": {
+      "count": 10,
+      "min_ms": 4399.092599982396,
+      "mean_ms": 7140.698810003232,
+      "p50_ms": 6856.785950018093,
+      "p95_ms": 9786.073000036413,
+      "max_ms": 9909.453100059181
+    },
+    "successful_requests": 10,
+    "measured_requests": 10,
+    "failure_count": 0,
+    "failures": [],
+    "includes_remote_llm": true
+  }
+}

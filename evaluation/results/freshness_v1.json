@@ -1,0 +1,16 @@
+{
+  "version": "freshness_v1",
+  "target_resource": "GDRIVE-PAY-001",
+  "marker": "novafreeze-271",
+  "before_found": false,
+  "after_found": true,
+  "update_detected": true,
+  "indexed_at_present": true,
+  "retrieval_refresh_pass": true,
+  "sync_duration_ms": 3.997,
+  "freshness_latency_ms": 3.997,
+  "updated_resources": [
+    "gdrive:GDRIVE-PAY-001"
+  ],
+  "passed": true
+}

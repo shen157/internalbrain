@@ -1,0 +1,312 @@
+[
+  {
+    "id": "10001",
+    "key": "PAY-101",
+    "fields": {
+      "summary": "Migrate payment schema to PostgreSQL",
+      "description": "Move the legacy Oracle payment schema to PostgreSQL with a dual-stack writer during the transition. Tracking epic for the payment migration project (CONF-PAY-001).",
+      "issuetype": { "name": "Story" },
+      "status": { "name": "In Progress" },
+      "priority": { "name": "High" },
+      "project": { "key": "PAY", "name": "Payment Platform" },
+      "assignee": { "accountId": "u001", "displayName": "Alice Chen" },
+      "reporter": { "accountId": "u006", "displayName": "Frank Liu" },
+      "labels": ["payment-migration", "database"],
+      "created": "2026-09-14T09:12:00Z",
+      "updated": "2026-09-30T11:00:00Z"
+    }
+  },
+  {
+    "id": "10002",
+    "key": "PAY-102",
+    "fields": {
+      "summary": "Legacy and PostgreSQL schema incompatible on nullable columns",
+      "description": "The legacy schema treats several payment columns as NOT NULL while PostgreSQL allows nulls. Direct row migration fails on 12k+ historical rows. Blocks the cutover window.",
+      "issuetype": { "name": "Bug" },
+      "status": { "name": "Blocked" },
+      "priority": { "name": "Highest" },
+      "project": { "key": "PAY", "name": "Payment Platform" },
+      "assignee": { "accountId": "u001", "displayName": "Alice Chen" },
+      "reporter": { "accountId": "u001", "displayName": "Alice Chen" },
+      "labels": ["payment-migration", "blocker", "database"],
+      "created": "2026-09-24T13:40:00Z",
+      "updated": "2026-09-29T13:40:00Z",
+      "issuelinks": [
+        {
+          "type": { "name": "Relates" },
+          "outwardIssue": { "key": "PAY-101" }
+        },
+        {
+          "type": { "name": "Blocks" },
+          "outwardIssue": { "key": "PAY-105" }
+        }
+      ]
+    }
+  },
+  {
+    "id": "10003",
+    "key": "PAY-103",
+    "fields": {
+      "summary": "Authentication timeouts during payment staging validation",
+      "description": "Staging validation of the migration shows p99 of 4.2s on the auth /validate endpoint, causing request timeouts. Root cause is validation latency in the legacy session service. Blocks the cutover window.",
+      "issuetype": { "name": "Bug" },
+      "status": { "name": "Blocked" },
+      "priority": { "name": "Highest" },
+      "project": { "key": "PAY", "name": "Payment Platform" },
+      "assignee": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "reporter": { "accountId": "u006", "displayName": "Frank Liu" },
+      "labels": ["payment-migration", "blocker", "authentication"],
+      "created": "2026-09-30T15:10:00Z",
+      "updated": "2026-09-30T16:05:00Z",
+      "issuelinks": [
+        {
+          "type": { "name": "Relates" },
+          "outwardIssue": { "key": "AUTH-201" }
+        }
+      ]
+    }
+  },
+  {
+    "id": "10004",
+    "key": "PAY-104",
+    "fields": {
+      "summary": "Backfill historical payment transactions",
+      "description": "One-way backfill of historical transactions into PostgreSQL. Estimated 14 hours of runtime. Chosen over a dual-write phase to keep the cutover atomic.",
+      "issuetype": { "name": "Task" },
+      "status": { "name": "To Do" },
+      "priority": { "name": "High" },
+      "project": { "key": "PAY", "name": "Payment Platform" },
+      "assignee": { "accountId": "u001", "displayName": "Alice Chen" },
+      "reporter": { "accountId": "u006", "displayName": "Frank Liu" },
+      "labels": ["payment-migration", "database"],
+      "created": "2026-09-25T10:05:00Z",
+      "updated": "2026-09-25T10:05:00Z"
+    }
+  },
+  {
+    "id": "10005",
+    "key": "PAY-105",
+    "fields": {
+      "summary": "Payment cutover checklist and rollback plan",
+      "description": "Produce the cutover checklist and rollback plan for the payment migration window. Published as part of the runbook CONF-PAY-002.",
+      "issuetype": { "name": "Task" },
+      "status": { "name": "Done" },
+      "priority": { "name": "Medium" },
+      "project": { "key": "PAY", "name": "Payment Platform" },
+      "assignee": { "accountId": "u006", "displayName": "Frank Liu" },
+      "reporter": { "accountId": "u003", "displayName": "Carol Nguyen" },
+      "labels": ["payment-migration", "readiness"],
+      "created": "2026-09-15T09:40:00Z",
+      "updated": "2026-10-01T08:30:00Z",
+      "resolutiondate": "2026-10-01T08:30:00Z"
+    }
+  },
+  {
+    "id": "10011",
+    "key": "AUTH-201",
+    "fields": {
+      "summary": "Upgrade authentication service to OAuth 2.1",
+      "description": "Replace legacy session tokens with OAuth 2.1 and short-lived JWTs. Rollout behind the auth-v2 feature flag. Details in CONF-AUTH-001.",
+      "issuetype": { "name": "Story" },
+      "status": { "name": "In Progress" },
+      "priority": { "name": "High" },
+      "project": { "key": "AUTH", "name": "Authentication Service" },
+      "assignee": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "reporter": { "accountId": "u003", "displayName": "Carol Nguyen" },
+      "labels": ["authentication", "platform"],
+      "created": "2026-09-18T11:00:00Z",
+      "updated": "2026-10-02T13:05:00Z"
+    }
+  },
+  {
+    "id": "10012",
+    "key": "AUTH-202",
+    "fields": {
+      "summary": "Rotate JWT signing keys for authentication service",
+      "description": "Planned rotation of the JWT signing keys, including the emergency key. Execution details are restricted to the security team and are not recorded in this issue description.",
+      "issuetype": { "name": "Task" },
+      "status": { "name": "Done" },
+      "priority": { "name": "Highest" },
+      "project": { "key": "AUTH", "name": "Authentication Service" },
+      "assignee": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "reporter": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "labels": ["authentication", "security"],
+      "created": "2026-09-16T09:05:00Z",
+      "updated": "2026-10-03T08:45:00Z",
+      "resolutiondate": "2026-10-03T08:45:00Z"
+    }
+  },
+  {
+    "id": "10013",
+    "key": "AUTH-203",
+    "fields": {
+      "summary": "Deprecate legacy session tokens",
+      "description": "Remove support for legacy session tokens from the auth service. Fallback path removal is scheduled for 2026-11-07.",
+      "issuetype": { "name": "Task" },
+      "status": { "name": "Done" },
+      "priority": { "name": "High" },
+      "project": { "key": "AUTH", "name": "Authentication Service" },
+      "assignee": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "reporter": { "accountId": "u003", "displayName": "Carol Nguyen" },
+      "labels": ["authentication"],
+      "created": "2026-09-10T14:20:00Z",
+      "updated": "2026-10-02T13:10:00Z",
+      "resolutiondate": "2026-10-02T13:10:00Z"
+    }
+  },
+  {
+    "id": "10014",
+    "key": "AUTH-204",
+    "fields": {
+      "summary": "Load test authentication service at 3x peak traffic",
+      "description": "Validate that the OAuth 2.1 validation path holds p99 below 800ms at 3x peak traffic before rollout.",
+      "issuetype": { "name": "Task" },
+      "status": { "name": "In Progress" },
+      "priority": { "name": "High" },
+      "project": { "key": "AUTH", "name": "Authentication Service" },
+      "assignee": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "reporter": { "accountId": "u003", "displayName": "Carol Nguyen" },
+      "labels": ["authentication", "performance"],
+      "created": "2026-09-27T11:45:00Z",
+      "updated": "2026-10-02T13:15:00Z"
+    }
+  },
+  {
+    "id": "10021",
+    "key": "SEC-004",
+    "fields": {
+      "summary": "Q3 incident follow-up: privilege escalation via stale service account",
+      "description": "Follow-up for INC-2026-Q3-01. A stale service account retained cluster-admin in staging after offboarding. Containment and timeline are documented in CONF-SEC-001.",
+      "issuetype": { "name": "Bug" },
+      "status": { "name": "Done" },
+      "priority": { "name": "Highest" },
+      "project": { "key": "SEC", "name": "Security Engineering" },
+      "assignee": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "reporter": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "labels": ["security", "incident"],
+      "created": "2026-09-12T11:20:00Z",
+      "updated": "2026-09-16T17:35:00Z",
+      "resolutiondate": "2026-09-16T17:35:00Z"
+    }
+  },
+  {
+    "id": "10022",
+    "key": "SEC-005",
+    "fields": {
+      "summary": "Add audit logging for privileged access",
+      "description": "Emit immutable audit events for all cluster-admin and production database bindings, with alerting on stale accounts.",
+      "issuetype": { "name": "Task" },
+      "status": { "name": "In Progress" },
+      "priority": { "name": "High" },
+      "project": { "key": "SEC", "name": "Security Engineering" },
+      "assignee": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "reporter": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "labels": ["security", "audit", "logging"],
+      "created": "2026-09-15T16:20:00Z",
+      "updated": "2026-09-18T10:10:00Z"
+    }
+  },
+  {
+    "id": "10023",
+    "key": "SEC-006",
+    "fields": {
+      "summary": "Review external contractor access to production data",
+      "description": "Confirm that external contractor accounts hold only read-only staging access and no production data access. Evidence export referenced from CONF-SEC-002.",
+      "issuetype": { "name": "Task" },
+      "status": { "name": "To Do" },
+      "priority": { "name": "High" },
+      "project": { "key": "SEC", "name": "Security Engineering" },
+      "assignee": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "reporter": { "accountId": "u005", "displayName": "Elena Petrova" },
+      "labels": ["security", "access-review", "compliance"],
+      "created": "2026-09-16T17:35:00Z",
+      "updated": "2026-09-17T09:20:00Z"
+    }
+  },
+  {
+    "id": "10024",
+    "key": "SEC-007",
+    "fields": {
+      "summary": "Schedule company-wide security awareness training",
+      "description": "Arrange the 2026 security awareness training program: sessions, slides and completion tracking. Policy: CONF-HR-003. Slides: GDRIVE-HR-002. This is a training task, not incident response work.",
+      "issuetype": { "name": "Task" },
+      "status": { "name": "In Progress" },
+      "priority": { "name": "Medium" },
+      "project": { "key": "SEC", "name": "Security Engineering" },
+      "assignee": { "accountId": "u008", "displayName": "Henry Adeyemi" },
+      "reporter": { "accountId": "u005", "displayName": "Elena Petrova" },
+      "labels": ["security", "training", "hr"],
+      "created": "2026-09-29T10:35:00Z",
+      "updated": "2026-10-02T09:20:00Z"
+    }
+  },
+  {
+    "id": "10015",
+    "key": "AUTH-205",
+    "fields": {
+      "summary": "Publish updated auth SDK documentation",
+      "description": "Refresh the public SDK documentation for the auth service after the OAuth 2.1 work. Documentation only; unrelated to the runtime rollout work in AUTH-201 and unrelated to the payment staging timeouts.",
+      "issuetype": { "name": "Task" },
+      "status": { "name": "Done" },
+      "priority": { "name": "Low" },
+      "project": { "key": "AUTH", "name": "Authentication Service" },
+      "assignee": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "reporter": { "accountId": "u002", "displayName": "Bob Martinez" },
+      "labels": ["authentication", "documentation"],
+      "created": "2026-09-21T09:00:00Z",
+      "updated": "2026-10-01T09:10:00Z",
+      "resolutiondate": "2026-10-01T09:10:00Z"
+    }
+  },
+  {
+    "id": "10006",
+    "key": "PAY-106",
+    "fields": {
+      "summary": "Evaluate new payment gateway for EU merchants",
+      "description": "Vendor evaluation for an additional EU payment gateway, driven by merchant onboarding demand (see CONF-PAY-004). Separate workstream from the platform migration (PAY-101).",
+      "issuetype": { "name": "Story" },
+      "status": { "name": "To Do" },
+      "priority": { "name": "Medium" },
+      "project": { "key": "PAY", "name": "Payment Platform" },
+      "assignee": { "accountId": "u006", "displayName": "Frank Liu" },
+      "reporter": { "accountId": "u006", "displayName": "Frank Liu" },
+      "labels": ["payment", "vendors"],
+      "created": "2026-10-01T10:00:00Z",
+      "updated": "2026-10-01T10:00:00Z"
+    }
+  },
+  {
+    "id": "10031",
+    "key": "DP-301",
+    "fields": {
+      "summary": "Migrate analytics warehouse to PostgreSQL",
+      "description": "Move the analytics warehouse from Oracle to PostgreSQL: event tables, reporting schemas and the batch ETL layer. This is the data platform workstream and is separate from the payment platform migration. Plan: CONF-ENG-002.",
+      "issuetype": { "name": "Story" },
+      "status": { "name": "In Progress" },
+      "priority": { "name": "High" },
+      "project": { "key": "DP", "name": "Data Platform" },
+      "assignee": { "accountId": "u001", "displayName": "Alice Chen" },
+      "reporter": { "accountId": "u003", "displayName": "Carol Nguyen" },
+      "labels": ["data-platform", "database"],
+      "created": "2026-09-08T10:00:00Z",
+      "updated": "2026-09-22T14:05:00Z"
+    }
+  },
+  {
+    "id": "10032",
+    "key": "DP-302",
+    "fields": {
+      "summary": "Backfill historical analytics events into new warehouse",
+      "description": "Backfill five years of analytics events once the DP-301 schema migration completes. This is the data platform backfill and is unrelated to the payment transaction backfill (PAY-104).",
+      "issuetype": { "name": "Task" },
+      "status": { "name": "To Do" },
+      "priority": { "name": "Medium" },
+      "project": { "key": "DP", "name": "Data Platform" },
+      "assignee": { "accountId": "u001", "displayName": "Alice Chen" },
+      "reporter": { "accountId": "u001", "displayName": "Alice Chen" },
+      "labels": ["data-platform", "database"],
+      "created": "2026-09-22T14:10:00Z",
+      "updated": "2026-09-22T14:10:00Z"
+    }
+  }
+]

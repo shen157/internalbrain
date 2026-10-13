@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+  <circle cx="1830" cy="60" r="130" fill="#F0F6FF"/>
+  <circle cx="80" cy="1030" r="110" fill="#F0FAF6"/>
+
+  <text x="960" y="72" text-anchor="middle" font-size="36" font-weight="800" fill="#16213A">Security and Retrieval Evaluation</text>
+  <text x="960" y="106" text-anchor="middle" font-size="17" fill="#5A6B85">InternalBrain · every value below is verified from saved evidence under evaluation/results</text>
+
+  <!-- row 1 -->
+  <g>
+    <rect x="78" y="150" width="420" height="190" rx="16" fill="#FFFFFF" stroke="#E1E8F2" stroke-width="2"/>
+    <rect x="78" y="150" width="420" height="6" rx="3" fill="#0E9F6E"/>
+    <text x="288" y="200" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">Permission Tests</text>
+    <text x="288" y="270" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">50 / 50</text>
+    <text x="288" y="310" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">PASS — 100% permission accuracy</text>
+    <text x="288" y="328" text-anchor="middle" font-size="12" fill="#8A94A6">permission_final_v1.json</text>
+  </g>
+  <g>
+    <rect x="526" y="150" width="420" height="190" rx="16" fill="#EFFBF4" stroke="#0E9F6E" stroke-width="3"/>
+    <rect x="526" y="150" width="420" height="6" rx="3" fill="#0E9F6E"/>
+    <text x="736" y="200" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">False Allow</text>
+    <text x="736" y="270" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">0</text>
+    <text x="736" y="310" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">0% false-allow rate</text>
+    <text x="736" y="328" text-anchor="middle" font-size="12" fill="#8A94A6">permission_final_v1.json</text>
+  </g>
+  <g>
+    <rect x="974" y="150" width="420" height="190" rx="16" fill="#FFFFFF" stroke="#E1E8F2" stroke-width="2"/>
+    <rect x="974" y="150" width="420" height="6" rx="3" fill="#0E9F6E"/>
+    <text x="1184" y="200" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">Backend E2E</text>
+    <text x="1184" y="270" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">13 / 13</text>
+    <text x="1184" y="310" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">PASS — deterministic pipeline validation</text>
+    <text x="1184" y="328" text-anchor="middle" font-size="12" fill="#8A94A6">e2e_final_v1.json</text>
+  </g>
+  <g>
+    <rect x="1422" y="150" width="420" height="190" rx="16" fill="#FFFFFF" stroke="#E1E8F2" stroke-width="2"/>
+    <rect x="1422" y="150" width="420" height="6" rx="3" fill="#0E9F6E"/>
+    <text x="1632" y="200" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">Safety Tests</text>
+    <text x="1632" y="270" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">32 / 32</text>
+    <text x="1632" y="310" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">PASS — prompt-injection defense suite</text>
+    <text x="1632" y="328" text-anchor="middle" font-size="12" fill="#8A94A6">safety_final_v1.json</text>
+  </g>
+
+  <!-- row 2 -->
+  <g>
+    <rect x="78" y="368" width="420" height="190" rx="16" fill="#FFFFFF" stroke="#E1E8F2" stroke-width="2"/>
+    <rect x="78" y="368" width="420" height="6" rx="3" fill="#0E9F6E"/>
+    <text x="288" y="418" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">Live Permission Change</text>
+    <text x="288" y="488" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">PASS</text>
+    <text x="288" y="528" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">grant → retrievable · revoke → abstains</text>
+    <text x="288" y="546" text-anchor="middle" font-size="12" fill="#8A94A6">live_permission_change_v1.json</text>
+  </g>
+  <g>
+    <rect x="526" y="368" width="420" height="190" rx="16" fill="#FFFFFF" stroke="#E1E8F2" stroke-width="2"/>
+    <rect x="526" y="368" width="420" height="6" rx="3" fill="#0E9F6E"/>
+    <text x="736" y="418" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">Audit Inquiry</text>
+    <text x="736" y="488" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">PASS</text>
+    <text x="736" y="528" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">complete query trace · filtered events</text>
+    <text x="736" y="546" text-anchor="middle" font-size="12" fill="#8A94A6">audit_inquiry_v1.json</text>
+  </g>
+  <g>
+    <rect x="974" y="368" width="420" height="190" rx="16" fill="#FFFFFF" stroke="#E1E8F2" stroke-width="2"/>
+    <rect x="974" y="368" width="420" height="6" rx="3" fill="#0E9F6E"/>
+    <text x="1184" y="418" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">Audit Tamper Detection</text>
+    <text x="1184" y="488" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">PASS</text>
+    <text x="1184" y="528" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">SHA-256 chain verification</text>
+    <text x="1184" y="546" text-anchor="middle" font-size="12" fill="#8A94A6">audit_evaluation_v1.json</text>
+  </g>
+  <g>
+    <rect x="1422" y="368" width="420" height="190" rx="16" fill="#FFFFFF" stroke="#E1E8F2" stroke-width="2"/>
+    <rect x="1422" y="368" width="420" height="6" rx="3" fill="#0E9F6E"/>
+    <text x="1632" y="418" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">Backend Acceptance</text>
+    <text x="1632" y="488" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">22 / 22</text>
+    <text x="1632" y="528" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">consolidated acceptance checks</text>
+    <text x="1632" y="546" text-anchor="middle" font-size="12" fill="#8A94A6">final_backend_metrics.json</text>
+  </g>
+
+  <!-- row 3 -->
+  <g>
+    <rect x="78" y="586" width="420" height="190" rx="16" fill="#FFFFFF" stroke="#E1E8F2" stroke-width="2"/>
+    <rect x="78" y="586" width="420" height="6" rx="3" fill="#0052D9"/>
+    <text x="288" y="636" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">Recall@5</text>
+    <text x="288" y="706" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">100%</text>
+    <text x="288" y="746" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">frozen retrieval holdout · 15 cases</text>
+    <text x="288" y="764" text-anchor="middle" font-size="12" fill="#8A94A6">retrieval_holdout_v1.json</text>
+  </g>
+  <g>
+    <rect x="526" y="586" width="420" height="190" rx="16" fill="#FFFFFF" stroke="#E1E8F2" stroke-width="2"/>
+    <rect x="526" y="586" width="420" height="6" rx="3" fill="#0052D9"/>
+    <text x="736" y="636" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">MRR</text>
+    <text x="736" y="706" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">1.00</text>
+    <text x="736" y="746" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">frozen retrieval holdout</text>
+    <text x="736" y="764" text-anchor="middle" font-size="12" fill="#8A94A6">retrieval_holdout_v1.json</text>
+  </g>
+  <g>
+    <rect x="974" y="586" width="420" height="190" rx="16" fill="#EFFBF4" stroke="#0E9F6E" stroke-width="3"/>
+    <rect x="974" y="586" width="420" height="6" rx="3" fill="#0E9F6E"/>
+    <text x="1184" y="636" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">Unauthorized Retrieval</text>
+    <text x="1184" y="706" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">0%</text>
+    <text x="1184" y="746" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">restricted content never retrieved</text>
+    <text x="1184" y="764" text-anchor="middle" font-size="12" fill="#8A94A6">retrieval_holdout_v1.json</text>
+  </g>
+  <g>
+    <rect x="1422" y="586" width="420" height="190" rx="16" fill="#FFFFFF" stroke="#E1E8F2" stroke-width="2"/>
+    <rect x="1422" y="586" width="420" height="6" rx="3" fill="#0E9F6E"/>
+    <text x="1632" y="636" text-anchor="middle" font-size="18" font-weight="600" fill="#3B4A66">Safety Holdout</text>
+    <text x="1632" y="706" text-anchor="middle" font-size="58" font-weight="800" fill="#0E9F6E">16 / 16</text>
+    <text x="1632" y="746" text-anchor="middle" font-size="14" fill="#0E9F6E" font-weight="700">PASS — frozen safety holdout</text>
+    <text x="1632" y="764" text-anchor="middle" font-size="12" fill="#8A94A6">safety_holdout_v1.json</text>
+  </g>
+
+  <!-- bottom banner -->
+  <rect x="78" y="824" width="1764" height="110" rx="16" fill="#16213A"/>
+  <text x="960" y="872" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF">Authorized answers with citations.</text>
+  <text x="960" y="912" text-anchor="middle" font-size="21" fill="#C7D4F0">Unauthorized and nonexistent resources remain indistinguishable.</text>
+
+  <text x="960" y="996" text-anchor="middle" font-size="14" fill="#8A94A6">Frozen evaluation evidence is available under evaluation/results</text>
+</svg>

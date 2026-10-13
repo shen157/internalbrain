@@ -1,0 +1,54 @@
+[
+  {
+    "folderId": "FOLDER-PAY",
+    "permissions": [
+      { "id": "fperm-pay-1", "type": "user", "role": "owner", "principalId": "u003" },
+      { "id": "fperm-pay-2", "type": "group", "role": "reader", "principalId": "payment-team" }
+    ]
+  },
+  {
+    "folderId": "FOLDER-AUTH",
+    "permissions": [
+      { "id": "fperm-auth-1", "type": "user", "role": "owner", "principalId": "u002" },
+      { "id": "fperm-auth-2", "type": "group", "role": "reader", "principalId": "engineering" }
+    ]
+  },
+  {
+    "folderId": "FOLDER-SEC",
+    "permissions": [
+      { "id": "fperm-sec-1", "type": "user", "role": "owner", "principalId": "u002" },
+      { "id": "fperm-sec-2", "type": "group", "role": "reader", "principalId": "security-team" }
+    ]
+  },
+  {
+    "folderId": "FOLDER-FIN",
+    "permissions": [
+      { "id": "fperm-fin-1", "type": "user", "role": "owner", "principalId": "u004" },
+      { "id": "fperm-fin-2", "type": "group", "role": "reader", "principalId": "finance" },
+      { "id": "fperm-fin-3", "type": "group", "role": "reader", "principalId": "leadership" }
+    ]
+  },
+  {
+    "folderId": "FOLDER-HR",
+    "permissions": [
+      { "id": "fperm-hr-1", "type": "user", "role": "owner", "principalId": "u008" },
+      { "id": "fperm-hr-2", "type": "group", "role": "reader", "principalId": "all-employees" }
+    ]
+  },
+  {
+    "folderId": "FOLDER-ENG",
+    "permissions": [
+      { "id": "fperm-eng-1", "type": "user", "role": "owner", "principalId": "u003" },
+      { "id": "fperm-eng-2", "type": "group", "role": "reader", "principalId": "engineering" },
+      { "id": "fperm-eng-3", "type": "group", "role": "reader", "principalId": "contractors" }
+    ]
+  },
+  {
+    "folderId": "FOLDER-SHARED",
+    "permissions": [
+      { "id": "fperm-shared-1", "type": "user", "role": "owner", "principalId": "u003" },
+      { "id": "fperm-shared-2", "type": "group", "role": "reader", "principalId": "all-employees" },
+      { "id": "fperm-shared-3", "type": "user", "role": "reader", "principalId": "u007" }
+    ]
+  }
+]

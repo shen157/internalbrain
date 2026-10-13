@@ -1,0 +1,58 @@
+[
+  {
+    "test_id": "RET-001",
+    "user_id": "u001",
+    "query": "payment migration PostgreSQL",
+    "expected_sources": [
+      "PAY-101",
+      "CONF-PAY-001",
+      "GDRIVE-PAY-001"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "RET-002",
+    "user_id": "u001",
+    "query": "schema incompatibility blocks payment cutover",
+    "expected_sources": [
+      "PAY-102"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "RET-003",
+    "user_id": "u002",
+    "query": "Q3 security incident stale service account",
+    "expected_sources": [
+      "SEC-004",
+      "GDRIVE-SEC-001",
+      "C-SEC:2026-09-12T10:50:00Z"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "RET-004",
+    "user_id": "u002",
+    "query": "authentication rollout signing key rotation",
+    "expected_sources": [
+      "AUTH-202",
+      "CONF-AUTH-002"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "RET-005",
+    "user_id": "u007",
+    "query": "Q3 security incident vulnerability",
+    "expected_sources": [],
+    "expect_no_results": true
+  }
+  ,
+  {
+    "test_id": "RET-006",
+    "user_id": "u007",
+    "query": "What happened in the Q3 security incident?",
+    "expected_sources": [],
+    "expect_no_results": true
+  }
+]

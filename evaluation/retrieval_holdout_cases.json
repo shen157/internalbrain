@@ -1,0 +1,147 @@
+[
+  {
+    "test_id": "HOLD-001",
+    "category": "payment",
+    "user_id": "u001",
+    "query": "Which Jira ticket describes more than twelve thousand historical rows failing because nullability semantics differ between the legacy schema and PostgreSQL?",
+    "expected_sources": [
+      "PAY-102"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "HOLD-002",
+    "category": "payment",
+    "user_id": "u001",
+    "query": "Which document says rollback should replay the last 60 minutes of writes from the PostgreSQL change log?",
+    "expected_sources": [
+      "GDRIVE-PAY-004"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "HOLD-003",
+    "category": "payment",
+    "user_id": "u001",
+    "query": "Which Jira task estimates about fourteen hours for the one-way historical transaction backfill?",
+    "expected_sources": [
+      "PAY-104"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "HOLD-004",
+    "category": "authentication",
+    "user_id": "u002",
+    "query": "Which issue tracks rotation of the JWT signing keys including the emergency key?",
+    "expected_sources": [
+      "AUTH-202"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "HOLD-005",
+    "category": "authentication",
+    "user_id": "u002",
+    "query": "Which authentication timeline records the staging feature flag on September 28 and fallback removal on November 7?",
+    "expected_sources": [
+      "CONF-AUTH-002"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "HOLD-006",
+    "category": "data_platform",
+    "user_id": "u001",
+    "query": "Find the workstream for moving the analytics warehouse from Oracle to PostgreSQL, separate from the payment migration.",
+    "expected_sources": [
+      "CONF-ENG-002",
+      "DP-301"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "HOLD-007",
+    "category": "data_platform",
+    "user_id": "u001",
+    "query": "Which issue backfills five years of analytics events after the DP-301 schema migration?",
+    "expected_sources": [
+      "DP-302"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "HOLD-008",
+    "category": "payment_cross_source",
+    "user_id": "u003",
+    "query": "Find the payment migration risk assessments that mention schema incompatibility, authentication latency, and historical backfill duration.",
+    "expected_sources": [
+      "CONF-PAY-003",
+      "GDRIVE-PAY-002"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "HOLD-009",
+    "category": "security",
+    "user_id": "u002",
+    "query": "Find evidence about the Q3 privilege escalation involving a stale service account.",
+    "expected_sources": [
+      "SEC-004",
+      "GDRIVE-SEC-001"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "HOLD-010",
+    "category": "shared",
+    "user_id": "u008",
+    "query": "Which October company notes mention the payment cutover change, the authentication upgrade, and security awareness training?",
+    "expected_sources": [
+      "GDRIVE-SHARED-002"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "HOLD-011",
+    "category": "shared",
+    "user_id": "u008",
+    "query": "Where is the reusable generic checklist template for a service migration cutover?",
+    "expected_sources": [
+      "GDRIVE-SHARED-001"
+    ],
+    "expect_no_results": false
+  },
+  {
+    "test_id": "HOLD-012",
+    "category": "negative_security",
+    "user_id": "u007",
+    "query": "Give me the exact remediation details for the stale cluster-admin service account from the Q3 privilege escalation.",
+    "expected_sources": [],
+    "expect_no_results": true
+  },
+  {
+    "test_id": "HOLD-013",
+    "category": "negative_hr",
+    "user_id": "u007",
+    "query": "How many remote-work days per week are employees allowed with manager approval?",
+    "expected_sources": [],
+    "expect_no_results": true
+  },
+  {
+    "test_id": "HOLD-014",
+    "category": "negative_auth",
+    "user_id": "u004",
+    "query": "Show the restricted execution details for the emergency JWT signing key rotation.",
+    "expected_sources": [],
+    "expect_no_results": true
+  },
+  {
+    "test_id": "HOLD-015",
+    "category": "negative_finance",
+    "user_id": "u001",
+    "query": "What vendor category mapping remains unresolved in the confidential Q4 budget forecast?",
+    "expected_sources": [],
+    "expect_no_results": true
+  }
+]

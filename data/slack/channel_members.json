@@ -1,0 +1,22 @@
+[
+  {
+    "channel_id": "C-GEN",
+    "members": ["u001", "u002", "u003", "u004", "u005", "u006", "u007", "u008"]
+  },
+  {
+    "channel_id": "C-ENG",
+    "members": ["u001", "u002", "u003", "u006"]
+  },
+  {
+    "channel_id": "C-PAY",
+    "members": ["u001", "u002", "u003", "u006", "u007"]
+  },
+  {
+    "channel_id": "C-SEC",
+    "members": ["u002", "u003"]
+  },
+  {
+    "channel_id": "C-FIN",
+    "members": ["u003", "u004", "u005"]
+  }
+]

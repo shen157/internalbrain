@@ -1,0 +1,26 @@
+[
+  {
+    "spaceId": "ENG",
+    "spaceName": "Engineering",
+    "allowedUsers": [],
+    "allowedGroups": ["engineering", "contractors"]
+  },
+  {
+    "spaceId": "SEC",
+    "spaceName": "Security",
+    "allowedUsers": ["u005"],
+    "allowedGroups": ["security-team"]
+  },
+  {
+    "spaceId": "FIN",
+    "spaceName": "Finance",
+    "allowedUsers": ["u005"],
+    "allowedGroups": ["finance", "leadership"]
+  },
+  {
+    "spaceId": "HR",
+    "spaceName": "People and HR",
+    "allowedUsers": [],
+    "allowedGroups": ["all-employees"]
+  }
+]

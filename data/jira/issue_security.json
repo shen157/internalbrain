@@ -1,0 +1,42 @@
+[
+  {
+    "issueKey": "AUTH-202",
+    "securityLevel": {
+      "id": "SEC-LEVEL-1",
+      "name": "Security Team Only",
+      "description": "Visible only to members of the security-team group.",
+      "allowedUsers": [],
+      "allowedGroups": ["security-team"]
+    }
+  },
+  {
+    "issueKey": "SEC-004",
+    "securityLevel": {
+      "id": "SEC-LEVEL-1",
+      "name": "Security Team Only",
+      "description": "Visible only to members of the security-team group.",
+      "allowedUsers": [],
+      "allowedGroups": ["security-team"]
+    }
+  },
+  {
+    "issueKey": "SEC-005",
+    "securityLevel": {
+      "id": "SEC-LEVEL-1",
+      "name": "Security Team Only",
+      "description": "Visible only to members of the security-team group.",
+      "allowedUsers": [],
+      "allowedGroups": ["security-team"]
+    }
+  },
+  {
+    "issueKey": "SEC-006",
+    "securityLevel": {
+      "id": "SEC-LEVEL-2",
+      "name": "Security and Compliance",
+      "description": "Visible to the security team and to the named compliance officer.",
+      "allowedUsers": ["u005"],
+      "allowedGroups": ["security-team"]
+    }
+  }
+]

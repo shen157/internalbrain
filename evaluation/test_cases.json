@@ -1,0 +1,257 @@
+[
+  {
+    "test_id": "PERM-001",
+    "user_id": "u001",
+    "source": "confluence",
+    "resource_id": "CONF-PAY-001",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-002",
+    "user_id": "u007",
+    "source": "confluence",
+    "resource_id": "CONF-ENG-001",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-003",
+    "user_id": "u007",
+    "source": "confluence",
+    "resource_id": "CONF-PAY-002",
+    "expected_access": false
+  },
+  {
+    "test_id": "PERM-004",
+    "user_id": "u002",
+    "source": "confluence",
+    "resource_id": "CONF-AUTH-001",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-005",
+    "user_id": "u004",
+    "source": "confluence",
+    "resource_id": "CONF-FIN-002",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-006",
+    "user_id": "u001",
+    "source": "confluence",
+    "resource_id": "CONF-FIN-001",
+    "expected_access": false
+  },
+  {
+    "test_id": "PERM-007",
+    "user_id": "u005",
+    "source": "confluence",
+    "resource_id": "CONF-SEC-002",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-008",
+    "user_id": "u003",
+    "source": "confluence",
+    "resource_id": "CONF-SEC-001",
+    "expected_access": false
+  },
+  {
+    "test_id": "PERM-009",
+    "user_id": "u008",
+    "source": "confluence",
+    "resource_id": "CONF-HR-001",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-010",
+    "user_id": "u007",
+    "source": "confluence",
+    "resource_id": "CONF-HR-001",
+    "expected_access": false
+  },
+
+  {
+    "test_id": "PERM-011",
+    "user_id": "u001",
+    "source": "jira",
+    "resource_id": "PAY-102",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-012",
+    "user_id": "u004",
+    "source": "jira",
+    "resource_id": "PAY-102",
+    "expected_access": false
+  },
+  {
+    "test_id": "PERM-013",
+    "user_id": "u002",
+    "source": "jira",
+    "resource_id": "AUTH-202",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-014",
+    "user_id": "u001",
+    "source": "jira",
+    "resource_id": "AUTH-202",
+    "expected_access": false
+  },
+  {
+    "test_id": "PERM-015",
+    "user_id": "u002",
+    "source": "jira",
+    "resource_id": "SEC-004",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-016",
+    "user_id": "u005",
+    "source": "jira",
+    "resource_id": "SEC-006",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-017",
+    "user_id": "u005",
+    "source": "jira",
+    "resource_id": "SEC-005",
+    "expected_access": false
+  },
+  {
+    "test_id": "PERM-018",
+    "user_id": "u007",
+    "source": "jira",
+    "resource_id": "SEC-006",
+    "expected_access": false
+  },
+
+  {
+    "test_id": "PERM-019",
+    "user_id": "u001",
+    "source": "slack",
+    "resource_id": "C-PAY:2026-09-14T09:10:00Z",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-020",
+    "user_id": "u007",
+    "source": "slack",
+    "resource_id": "C-PAY:2026-09-14T09:10:00Z",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-021",
+    "user_id": "u004",
+    "source": "slack",
+    "resource_id": "C-PAY:2026-09-14T09:10:00Z",
+    "expected_access": false
+  },
+  {
+    "test_id": "PERM-022",
+    "user_id": "u002",
+    "source": "slack",
+    "resource_id": "C-SEC:2026-09-12T10:50:00Z",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-023",
+    "user_id": "u003",
+    "source": "slack",
+    "resource_id": "C-SEC:2026-09-12T10:50:00Z",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-024",
+    "user_id": "u005",
+    "source": "slack",
+    "resource_id": "C-SEC:2026-09-12T10:50:00Z",
+    "expected_access": false
+  },
+  {
+    "test_id": "PERM-025",
+    "user_id": "u008",
+    "source": "slack",
+    "resource_id": "C-GEN:2026-09-29T10:00:00Z",
+    "expected_access": true
+  },
+
+  {
+    "test_id": "PERM-026",
+    "user_id": "u001",
+    "source": "gdrive",
+    "resource_id": "GDRIVE-PAY-001",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-027",
+    "user_id": "u007",
+    "source": "gdrive",
+    "resource_id": "GDRIVE-PAY-001",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-028",
+    "user_id": "u004",
+    "source": "gdrive",
+    "resource_id": "GDRIVE-PAY-001",
+    "expected_access": false
+  },
+  {
+    "test_id": "PERM-029",
+    "user_id": "u002",
+    "source": "gdrive",
+    "resource_id": "GDRIVE-SEC-001",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-030",
+    "user_id": "u005",
+    "source": "gdrive",
+    "resource_id": "GDRIVE-SEC-002",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-031",
+    "user_id": "u003",
+    "source": "gdrive",
+    "resource_id": "GDRIVE-SEC-001",
+    "expected_access": false
+  },
+  {
+    "test_id": "PERM-032",
+    "user_id": "u004",
+    "source": "gdrive",
+    "resource_id": "GDRIVE-FIN-001",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-033",
+    "user_id": "u005",
+    "source": "gdrive",
+    "resource_id": "GDRIVE-FIN-001",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-034",
+    "user_id": "u001",
+    "source": "gdrive",
+    "resource_id": "GDRIVE-FIN-001",
+    "expected_access": false
+  },
+  {
+    "test_id": "PERM-035",
+    "user_id": "u008",
+    "source": "gdrive",
+    "resource_id": "GDRIVE-HR-001",
+    "expected_access": true
+  },
+  {
+    "test_id": "PERM-036",
+    "user_id": "u007",
+    "source": "gdrive",
+    "resource_id": "GDRIVE-HR-001",
+    "expected_access": false
+  }
+]

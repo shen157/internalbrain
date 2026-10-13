@@ -1,0 +1,92 @@
+[
+  {
+    "fileId": "GDRIVE-PAY-001",
+    "permissions": [
+      { "id": "perm-pay001-1", "type": "user", "role": "owner", "principalId": "u006" },
+      { "id": "perm-pay001-2", "type": "user", "role": "writer", "principalId": "u001" },
+      { "id": "perm-pay001-3", "type": "group", "role": "reader", "principalId": "payment-team" },
+      { "id": "perm-pay001-4", "type": "user", "role": "reader", "principalId": "u007" }
+    ]
+  },
+  {
+    "fileId": "GDRIVE-PAY-002",
+    "permissions": [
+      { "id": "perm-pay002-1", "type": "user", "role": "owner", "principalId": "u003" },
+      { "id": "perm-pay002-2", "type": "user", "role": "writer", "principalId": "u006" },
+      { "id": "perm-pay002-3", "type": "user", "role": "commenter", "principalId": "u001" },
+      { "id": "perm-pay002-4", "type": "group", "role": "reader", "principalId": "payment-team" }
+    ]
+  },
+  {
+    "fileId": "GDRIVE-PAY-003",
+    "permissions": [
+      { "id": "perm-pay003-1", "type": "user", "role": "owner", "principalId": "u001" },
+      { "id": "perm-pay003-2", "type": "user", "role": "writer", "principalId": "u006" },
+      { "id": "perm-pay003-3", "type": "group", "role": "reader", "principalId": "payment-team" },
+      { "id": "perm-pay003-4", "type": "user", "role": "reader", "principalId": "u002" }
+    ]
+  },
+  {
+    "fileId": "GDRIVE-AUTH-001",
+    "permissions": [
+      { "id": "perm-auth001-1", "type": "user", "role": "owner", "principalId": "u002" },
+      { "id": "perm-auth001-2", "type": "user", "role": "writer", "principalId": "u001" },
+      { "id": "perm-auth001-3", "type": "user", "role": "commenter", "principalId": "u003" },
+      { "id": "perm-auth001-4", "type": "group", "role": "reader", "principalId": "engineering" }
+    ]
+  },
+  {
+    "fileId": "GDRIVE-AUTH-002",
+    "permissions": [
+      { "id": "perm-auth002-1", "type": "user", "role": "owner", "principalId": "u002" },
+      { "id": "perm-auth002-2", "type": "user", "role": "reader", "principalId": "u003" },
+      { "id": "perm-auth002-3", "type": "group", "role": "reader", "principalId": "engineering" }
+    ]
+  },
+  {
+    "fileId": "GDRIVE-SEC-001",
+    "permissions": [
+      { "id": "perm-sec001-1", "type": "user", "role": "owner", "principalId": "u002" },
+      { "id": "perm-sec001-2", "type": "group", "role": "reader", "principalId": "security-team" }
+    ]
+  },
+  {
+    "fileId": "GDRIVE-SEC-002",
+    "permissions": [
+      { "id": "perm-sec002-1", "type": "user", "role": "owner", "principalId": "u002" },
+      { "id": "perm-sec002-2", "type": "group", "role": "reader", "principalId": "security-team" },
+      { "id": "perm-sec002-3", "type": "user", "role": "reader", "principalId": "u005" }
+    ]
+  },
+  {
+    "fileId": "GDRIVE-FIN-001",
+    "permissions": [
+      { "id": "perm-fin001-1", "type": "user", "role": "owner", "principalId": "u004" },
+      { "id": "perm-fin001-2", "type": "user", "role": "writer", "principalId": "u005" },
+      { "id": "perm-fin001-3", "type": "group", "role": "reader", "principalId": "finance" },
+      { "id": "perm-fin001-4", "type": "group", "role": "reader", "principalId": "leadership" }
+    ]
+  },
+  {
+    "fileId": "GDRIVE-HR-001",
+    "permissions": [
+      { "id": "perm-hr001-1", "type": "user", "role": "owner", "principalId": "u008" },
+      { "id": "perm-hr001-2", "type": "group", "role": "reader", "principalId": "all-employees" }
+    ]
+  },
+  {
+    "fileId": "GDRIVE-ENG-001",
+    "permissions": [
+      { "id": "perm-eng001-1", "type": "user", "role": "owner", "principalId": "u003" },
+      { "id": "perm-eng001-2", "type": "group", "role": "reader", "principalId": "engineering" },
+      { "id": "perm-eng001-3", "type": "group", "role": "reader", "principalId": "contractors" }
+    ]
+  },
+  {
+    "fileId": "GDRIVE-FIN-003",
+    "permissions": [
+      { "id": "perm-fin003-1", "type": "user", "role": "owner", "principalId": "u004" },
+      { "id": "perm-fin003-2", "type": "group", "role": "reader", "principalId": "finance" }
+    ]
+  }
+]

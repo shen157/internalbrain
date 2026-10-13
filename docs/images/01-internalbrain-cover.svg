@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0052D9"/>
+    </marker>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- decorative shapes (kept clear of all text) -->
+  <circle cx="1560" cy="230" r="290" fill="#F0F6FF"/>
+  <circle cx="1810" cy="470" r="150" fill="#E9F6F1"/>
+  <circle cx="1420" cy="470" r="110" fill="none" stroke="#0052D9" stroke-opacity="0.12" stroke-width="28"/>
+  <circle cx="1755" cy="196" r="58" fill="none" stroke="#0E9F6E" stroke-opacity="0.18" stroke-width="14"/>
+  <rect x="1250" y="112" width="640" height="350" rx="40" fill="none" stroke="#D7E4F5" stroke-width="2"/>
+
+  <!-- top-left badge + track label -->
+  <rect x="120" y="140" width="64" height="64" rx="16" fill="#0052D9"/>
+  <text x="152" y="183" text-anchor="middle" font-size="28" font-weight="800" fill="#FFFFFF">IB</text>
+  <text x="208" y="182" font-size="17" font-weight="700" letter-spacing="4" fill="#0052D9">ASPIRE FINTECH TRACK</text>
+
+  <!-- main title block -->
+  <text x="196" y="344" font-size="96" font-weight="800" fill="#16213A">InternalBrain</text>
+  <text x="200" y="418" font-size="34" font-weight="700" fill="#0052D9">Secure Context-Aware Enterprise Knowledge Agent</text>
+  <text x="200" y="468" font-size="22" fill="#5A6B85">Permission-Aware Enterprise RAG across Confluence, Jira, Slack, and Google Drive</text>
+
+  <!-- core flow -->
+  <rect x="200" y="524" width="240" height="66" rx="33" fill="#E3F7EE" stroke="#0E9F6E" stroke-width="2"/>
+  <text x="320" y="565" text-anchor="middle" font-size="24" font-weight="700" fill="#0B5D3F">Permission</text>
+  <line x1="456" y1="557" x2="516" y2="557" stroke="#7A8AA0" stroke-width="3" marker-end="url(#arrBlue)"/>
+  <rect x="528" y="524" width="240" height="66" rx="33" fill="#E8F1FF" stroke="#0052D9" stroke-width="2"/>
+  <text x="648" y="565" text-anchor="middle" font-size="24" font-weight="700" fill="#123B8F">Retrieval</text>
+  <line x1="784" y1="557" x2="844" y2="557" stroke="#7A8AA0" stroke-width="3" marker-end="url(#arrBlue)"/>
+  <rect x="856" y="524" width="240" height="66" rx="33" fill="#FDEBD3" stroke="#E8891A" stroke-width="2"/>
+  <text x="976" y="565" text-anchor="middle" font-size="24" font-weight="700" fill="#8C5410">LLM</text>
+  <text x="200" y="644" font-size="19" fill="#4E5D78">Authorization happens before retrieval and before LLM generation.</text>
+
+  <!-- source cards -->
+  <g>
+    <rect x="196" y="690" width="340" height="122" rx="14" fill="#FFFFFF" stroke="#D7E4F5" stroke-width="2"/>
+    <rect x="196" y="690" width="340" height="6" rx="3" fill="#0052D9"/>
+    <text x="366" y="742" text-anchor="middle" font-size="24" font-weight="700" fill="#1B3A66">Confluence</text>
+    <text x="366" y="776" text-anchor="middle" font-size="15" fill="#6B7C93">Pages · Spaces · Restrictions</text>
+  </g>
+  <g>
+    <rect x="564" y="690" width="340" height="122" rx="14" fill="#FFFFFF" stroke="#D7E4F5" stroke-width="2"/>
+    <rect x="564" y="690" width="340" height="6" rx="3" fill="#2B7FD4"/>
+    <text x="734" y="742" text-anchor="middle" font-size="24" font-weight="700" fill="#1B3A66">Jira</text>
+    <text x="734" y="776" text-anchor="middle" font-size="15" fill="#6B7C93">Issues · Roles · Security levels</text>
+  </g>
+  <g>
+    <rect x="932" y="690" width="340" height="122" rx="14" fill="#FFFFFF" stroke="#D7E4F5" stroke-width="2"/>
+    <rect x="932" y="690" width="340" height="6" rx="3" fill="#0E9F6E"/>
+    <text x="1102" y="742" text-anchor="middle" font-size="24" font-weight="700" fill="#1B3A66">Slack</text>
+    <text x="1102" y="776" text-anchor="middle" font-size="15" fill="#6B7C93">Channels · Membership</text>
+  </g>
+  <g>
+    <rect x="1300" y="690" width="340" height="122" rx="14" fill="#FFFFFF" stroke="#D7E4F5" stroke-width="2"/>
+    <rect x="1300" y="690" width="340" height="6" rx="3" fill="#E8891A"/>
+    <text x="1470" y="742" text-anchor="middle" font-size="24" font-weight="700" fill="#1B3A66">Google Drive</text>
+    <text x="1470" y="776" text-anchor="middle" font-size="15" fill="#6B7C93">Files · Folders · Permissions</text>
+  </g>
+  <text x="918" y="858" text-anchor="middle" font-size="15" fill="#8A94A6">Synthetic source-shaped demo data — unified into one permission-aware search</text>
+
+  <!-- footer -->
+  <line x1="120" y1="912" x2="1800" y2="912" stroke="#E1E8F2" stroke-width="2"/>
+  <text x="196" y="962" font-size="21" font-weight="700" fill="#16213A">Team SoloByte · Solo Project</text>
+  <text x="196" y="992" font-size="16" fill="#6B7C93">SHEN ZIYANG · Nanyang Technological University</text>
+  <text x="960" y="1044" text-anchor="middle" font-size="16" fill="#8A94A6">Tencent Cloud AI CAN DO IT Hackathon Singapore 2026</text>
+  <text x="1800" y="1044" text-anchor="end" font-size="16" fill="#B0B9C8">v1.0.0</text>
+</svg>

@@ -1,0 +1,36 @@
+{
+  "version": "audit_inquiry_v1",
+  "query_id": "48c7fdfa-a99b-483d-adc0-60b4e2cdbf33",
+  "expected_trace_event_count": 9,
+  "observed_trace_event_types": [
+    "query_received",
+    "input_safety",
+    "authorization_retrieval",
+    "retrieved_content_safety",
+    "context_assembled",
+    "llm_generation",
+    "citation_validation",
+    "output_safety",
+    "final_response"
+  ],
+  "missing_trace_event_types": [],
+  "trace_completeness": 1.0,
+  "permission_filter_matched_count": 1,
+  "audit_inquiry_latency": {
+    "count": 50,
+    "mean_ms": 0.979766002856195,
+    "p50_ms": 0.9171499405056238,
+    "p95_ms": 1.359545043669641,
+    "max_ms": 2.190499799326062
+  },
+  "checks": {
+    "query_trace_complete": true,
+    "permission_filter_correct": true,
+    "permission_target_user_filter_correct": true,
+    "temp_chain_valid": true,
+    "audit_query_is_read_only": true,
+    "api_endpoint_works": true,
+    "real_audit_chain_valid": true
+  },
+  "passed": true
+}

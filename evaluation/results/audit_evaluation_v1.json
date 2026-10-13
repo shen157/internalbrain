@@ -1,0 +1,19 @@
+{
+  "version": "audit_v1",
+  "valid_chain_test": true,
+  "tamper_detection_test": true,
+  "valid_chain_result": {
+    "valid": true,
+    "event_count": 3,
+    "broken_line": null,
+    "reason": null
+  },
+  "tampered_chain_result": {
+    "valid": false,
+    "event_count": 2,
+    "broken_line": 2,
+    "event_id": "243a70f9-4858-4b9f-ba49-f4abb9165433",
+    "reason": "current_hash_mismatch"
+  },
+  "all_passed": true
+}

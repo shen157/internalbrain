@@ -1,0 +1,90 @@
+[
+  {
+    "projectKey": "PAY",
+    "projectName": "Payment Platform",
+    "projectLead": "u003",
+    "roles": [
+      {
+        "name": "Administrators",
+        "users": ["u003"],
+        "groups": []
+      },
+      {
+        "name": "Developers",
+        "users": ["u001", "u002", "u007"],
+        "groups": ["payment-team"]
+      },
+      {
+        "name": "Users",
+        "users": [],
+        "groups": ["payment-team"]
+      }
+    ]
+  },
+  {
+    "projectKey": "AUTH",
+    "projectName": "Authentication Service",
+    "projectLead": "u003",
+    "roles": [
+      {
+        "name": "Administrators",
+        "users": ["u003"],
+        "groups": []
+      },
+      {
+        "name": "Developers",
+        "users": ["u002"],
+        "groups": ["engineering"]
+      },
+      {
+        "name": "Users",
+        "users": [],
+        "groups": ["engineering"]
+      }
+    ]
+  },
+  {
+    "projectKey": "SEC",
+    "projectName": "Security Engineering",
+    "projectLead": "u002",
+    "roles": [
+      {
+        "name": "Administrators",
+        "users": ["u002"],
+        "groups": []
+      },
+      {
+        "name": "Developers",
+        "users": ["u002", "u003"],
+        "groups": ["security-team"]
+      },
+      {
+        "name": "Users",
+        "users": [],
+        "groups": ["all-employees"]
+      }
+    ]
+  },
+  {
+    "projectKey": "DP",
+    "projectName": "Data Platform",
+    "projectLead": "u003",
+    "roles": [
+      {
+        "name": "Administrators",
+        "users": ["u003"],
+        "groups": []
+      },
+      {
+        "name": "Developers",
+        "users": ["u001"],
+        "groups": ["engineering"]
+      },
+      {
+        "name": "Users",
+        "users": [],
+        "groups": ["engineering"]
+      }
+    ]
+  }
+]

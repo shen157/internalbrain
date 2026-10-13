@@ -1,0 +1,58 @@
+[
+  {
+    "pageId": "CONF-PAY-002",
+    "readRestrictions": {
+      "users": [],
+      "groups": ["payment-team"]
+    }
+  },
+  {
+    "pageId": "CONF-PAY-003",
+    "readRestrictions": {
+      "users": ["u006"],
+      "groups": ["payment-team"]
+    }
+  },
+  {
+    "pageId": "CONF-AUTH-001",
+    "readRestrictions": {
+      "users": ["u001"],
+      "groups": ["security-team", "leadership"]
+    }
+  },
+  {
+    "pageId": "CONF-SEC-001",
+    "readRestrictions": {
+      "users": [],
+      "groups": ["security-team"]
+    }
+  },
+  {
+    "pageId": "CONF-SEC-002",
+    "readRestrictions": {
+      "users": ["u005"],
+      "groups": ["security-team"]
+    }
+  },
+  {
+    "pageId": "CONF-FIN-001",
+    "readRestrictions": {
+      "users": [],
+      "groups": ["finance", "leadership"]
+    }
+  },
+  {
+    "pageId": "CONF-FIN-002",
+    "readRestrictions": {
+      "users": ["u004", "u005"],
+      "groups": ["finance"]
+    }
+  },
+  {
+    "pageId": "CONF-FIN-003",
+    "readRestrictions": {
+      "users": [],
+      "groups": ["leadership"]
+    }
+  }
+]

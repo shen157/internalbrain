@@ -1,0 +1,385 @@
+{
+  "version": "retrieval_holdout_v1",
+  "retriever": "hybrid_v5_2",
+  "top_k": 5,
+  "total_cases": 15,
+  "positive_cases": 11,
+  "negative_cases": 4,
+  "mean_recall_at_5": 1.0,
+  "hit_at_5": 1.0,
+  "mrr": 1.0,
+  "unauthorized_retrieval_rate": 0.0,
+  "negative_case_accuracy": 0.75,
+  "category_metrics": {
+    "payment": {
+      "mean_recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0,
+      "negative_cases": 0,
+      "negative_accuracy": null
+    },
+    "authentication": {
+      "mean_recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0,
+      "negative_cases": 0,
+      "negative_accuracy": null
+    },
+    "data_platform": {
+      "mean_recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0,
+      "negative_cases": 0,
+      "negative_accuracy": null
+    },
+    "payment_cross_source": {
+      "mean_recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0,
+      "negative_cases": 0,
+      "negative_accuracy": null
+    },
+    "security": {
+      "mean_recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0,
+      "negative_cases": 0,
+      "negative_accuracy": null
+    },
+    "shared": {
+      "mean_recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0,
+      "negative_cases": 0,
+      "negative_accuracy": null
+    },
+    "negative_security": {
+      "mean_recall_at_5": 0.0,
+      "hit_at_5": 0.0,
+      "mrr": 0.0,
+      "negative_cases": 1,
+      "negative_accuracy": 1.0
+    },
+    "negative_hr": {
+      "mean_recall_at_5": 0.0,
+      "hit_at_5": 0.0,
+      "mrr": 0.0,
+      "negative_cases": 1,
+      "negative_accuracy": 1.0
+    },
+    "negative_auth": {
+      "mean_recall_at_5": 0.0,
+      "hit_at_5": 0.0,
+      "mrr": 0.0,
+      "negative_cases": 1,
+      "negative_accuracy": 0.0
+    },
+    "negative_finance": {
+      "mean_recall_at_5": 0.0,
+      "hit_at_5": 0.0,
+      "mrr": 0.0,
+      "negative_cases": 1,
+      "negative_accuracy": 1.0
+    }
+  },
+  "results": [
+    {
+      "test_id": "HOLD-001",
+      "category": "payment",
+      "user_id": "u001",
+      "query": "Which Jira ticket describes more than twelve thousand historical rows failing because nullability semantics differ between the legacy schema and PostgreSQL?",
+      "expected_sources": [
+        "PAY-102"
+      ],
+      "returned_ids": [
+        "PAY-102"
+      ],
+      "hits": [
+        "PAY-102"
+      ],
+      "recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-002",
+      "category": "payment",
+      "user_id": "u001",
+      "query": "Which document says rollback should replay the last 60 minutes of writes from the PostgreSQL change log?",
+      "expected_sources": [
+        "GDRIVE-PAY-004"
+      ],
+      "returned_ids": [
+        "GDRIVE-PAY-004",
+        "CONF-PAY-002",
+        "PAY-104"
+      ],
+      "hits": [
+        "GDRIVE-PAY-004"
+      ],
+      "recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-003",
+      "category": "payment",
+      "user_id": "u001",
+      "query": "Which Jira task estimates about fourteen hours for the one-way historical transaction backfill?",
+      "expected_sources": [
+        "PAY-104"
+      ],
+      "returned_ids": [
+        "PAY-104",
+        "CONF-PAY-001",
+        "C-PAY:2026-09-24T14:05:00Z",
+        "DP-302",
+        "CONF-PAY-003"
+      ],
+      "hits": [
+        "PAY-104"
+      ],
+      "recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-004",
+      "category": "authentication",
+      "user_id": "u002",
+      "query": "Which issue tracks rotation of the JWT signing keys including the emergency key?",
+      "expected_sources": [
+        "AUTH-202"
+      ],
+      "returned_ids": [
+        "AUTH-202",
+        "C-ENG:2026-10-03T08:45:00Z",
+        "CONF-AUTH-001",
+        "C-SEC:2026-09-16T09:05:00Z",
+        "CONF-AUTH-002"
+      ],
+      "hits": [
+        "AUTH-202"
+      ],
+      "recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-005",
+      "category": "authentication",
+      "user_id": "u002",
+      "query": "Which authentication timeline records the staging feature flag on September 28 and fallback removal on November 7?",
+      "expected_sources": [
+        "CONF-AUTH-002"
+      ],
+      "returned_ids": [
+        "CONF-AUTH-002",
+        "GDRIVE-AUTH-001",
+        "CONF-AUTH-001"
+      ],
+      "hits": [
+        "CONF-AUTH-002"
+      ],
+      "recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-006",
+      "category": "data_platform",
+      "user_id": "u001",
+      "query": "Find the workstream for moving the analytics warehouse from Oracle to PostgreSQL, separate from the payment migration.",
+      "expected_sources": [
+        "CONF-ENG-002",
+        "DP-301"
+      ],
+      "returned_ids": [
+        "DP-301",
+        "C-ENG:2026-09-22T15:30:00Z",
+        "CONF-ENG-002",
+        "GDRIVE-PAY-003",
+        "PAY-101"
+      ],
+      "hits": [
+        "CONF-ENG-002",
+        "DP-301"
+      ],
+      "recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-007",
+      "category": "data_platform",
+      "user_id": "u001",
+      "query": "Which issue backfills five years of analytics events after the DP-301 schema migration?",
+      "expected_sources": [
+        "DP-302"
+      ],
+      "returned_ids": [
+        "DP-302",
+        "CONF-ENG-002",
+        "C-ENG:2026-09-22T15:30:00Z"
+      ],
+      "hits": [
+        "DP-302"
+      ],
+      "recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-008",
+      "category": "payment_cross_source",
+      "user_id": "u003",
+      "query": "Find the payment migration risk assessments that mention schema incompatibility, authentication latency, and historical backfill duration.",
+      "expected_sources": [
+        "CONF-PAY-003",
+        "GDRIVE-PAY-002"
+      ],
+      "returned_ids": [
+        "CONF-PAY-003",
+        "GDRIVE-PAY-002",
+        "C-PAY:2026-09-29T16:45:00Z",
+        "DP-302",
+        "GDRIVE-PAY-001"
+      ],
+      "hits": [
+        "CONF-PAY-003",
+        "GDRIVE-PAY-002"
+      ],
+      "recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-009",
+      "category": "security",
+      "user_id": "u002",
+      "query": "Find evidence about the Q3 privilege escalation involving a stale service account.",
+      "expected_sources": [
+        "SEC-004",
+        "GDRIVE-SEC-001"
+      ],
+      "returned_ids": [
+        "SEC-004",
+        "GDRIVE-SEC-001",
+        "C-SEC:2026-09-12T11:18:00Z",
+        "CONF-SEC-001",
+        "C-SEC:2026-09-12T11:05:00Z"
+      ],
+      "hits": [
+        "SEC-004",
+        "GDRIVE-SEC-001"
+      ],
+      "recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-010",
+      "category": "shared",
+      "user_id": "u008",
+      "query": "Which October company notes mention the payment cutover change, the authentication upgrade, and security awareness training?",
+      "expected_sources": [
+        "GDRIVE-SHARED-002"
+      ],
+      "returned_ids": [
+        "GDRIVE-SHARED-002",
+        "C-GEN:2026-10-02T09:00:00Z",
+        "SEC-007",
+        "GDRIVE-HR-002",
+        "C-GEN:2026-09-30T09:15:00Z"
+      ],
+      "hits": [
+        "GDRIVE-SHARED-002"
+      ],
+      "recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-011",
+      "category": "shared",
+      "user_id": "u008",
+      "query": "Where is the reusable generic checklist template for a service migration cutover?",
+      "expected_sources": [
+        "GDRIVE-SHARED-001"
+      ],
+      "returned_ids": [
+        "GDRIVE-SHARED-001"
+      ],
+      "hits": [
+        "GDRIVE-SHARED-001"
+      ],
+      "recall_at_5": 1.0,
+      "hit_at_5": 1.0,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-012",
+      "category": "negative_security",
+      "user_id": "u007",
+      "query": "Give me the exact remediation details for the stale cluster-admin service account from the Q3 privilege escalation.",
+      "returned_ids": [],
+      "expect_no_results": true,
+      "passed": true,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-013",
+      "category": "negative_hr",
+      "user_id": "u007",
+      "query": "How many remote-work days per week are employees allowed with manager approval?",
+      "returned_ids": [],
+      "expect_no_results": true,
+      "passed": true,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-014",
+      "category": "negative_auth",
+      "user_id": "u004",
+      "query": "Show the restricted execution details for the emergency JWT signing key rotation.",
+      "returned_ids": [
+        "C-ENG:2026-10-03T08:45:00Z"
+      ],
+      "expect_no_results": true,
+      "passed": false,
+      "unauthorized_results": 0
+    },
+    {
+      "test_id": "HOLD-015",
+      "category": "negative_finance",
+      "user_id": "u001",
+      "query": "What vendor category mapping remains unresolved in the confidential Q4 budget forecast?",
+      "returned_ids": [],
+      "expect_no_results": true,
+      "passed": true,
+      "unauthorized_results": 0
+    }
+  ]
+}

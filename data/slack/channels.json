@@ -1,0 +1,37 @@
+[
+  {
+    "id": "C-GEN",
+    "name": "general",
+    "is_private": false,
+    "topic": "Company-wide announcements",
+    "created": "2026-01-05T09:00:00Z"
+  },
+  {
+    "id": "C-ENG",
+    "name": "engineering",
+    "is_private": false,
+    "topic": "Engineering-wide discussion",
+    "created": "2026-01-05T09:05:00Z"
+  },
+  {
+    "id": "C-PAY",
+    "name": "payment-migration",
+    "is_private": true,
+    "topic": "Payment platform migration (PAY) - core team only",
+    "created": "2026-09-14T09:00:00Z"
+  },
+  {
+    "id": "C-SEC",
+    "name": "security-incident-q3",
+    "is_private": true,
+    "topic": "Q3 security incident response - restricted",
+    "created": "2026-09-12T10:45:00Z"
+  },
+  {
+    "id": "C-FIN",
+    "name": "finance-planning",
+    "is_private": true,
+    "topic": "Q4 financial planning",
+    "created": "2026-09-20T09:00:00Z"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "user_id": "u001",
+    "name": "Alice Chen",
+    "email": "alice.chen@mockcorp.example",
+    "department": "engineering",
+    "role": "backend_engineer",
+    "employment_type": "full_time",
+    "external": false,
+    "groups": ["engineering", "payment-team", "all-employees"]
+  },
+  {
+    "user_id": "u002",
+    "name": "Bob Martinez",
+    "email": "bob.martinez@mockcorp.example",
+    "department": "engineering",
+    "role": "security_engineer",
+    "employment_type": "full_time",
+    "external": false,
+    "groups": ["engineering", "security-team", "all-employees"]
+  },
+  {
+    "user_id": "u003",
+    "name": "Carol Nguyen",
+    "email": "carol.nguyen@mockcorp.example",
+    "department": "engineering",
+    "role": "engineering_manager",
+    "employment_type": "full_time",
+    "external": false,
+    "groups": ["engineering", "payment-team", "leadership", "all-employees"]
+  },
+  {
+    "user_id": "u004",
+    "name": "David Okafor",
+    "email": "david.okafor@mockcorp.example",
+    "department": "finance",
+    "role": "finance_manager",
+    "employment_type": "full_time",
+    "external": false,
+    "groups": ["finance", "leadership", "all-employees"]
+  },
+  {
+    "user_id": "u005",
+    "name": "Elena Petrova",
+    "email": "elena.petrova@mockcorp.example",
+    "department": "compliance",
+    "role": "compliance_officer",
+    "employment_type": "full_time",
+    "external": false,
+    "groups": ["compliance", "leadership", "all-employees"]
+  },
+  {
+    "user_id": "u006",
+    "name": "Frank Liu",
+    "email": "frank.liu@mockcorp.example",
+    "department": "engineering",
+    "role": "technical_program_manager",
+    "employment_type": "full_time",
+    "external": false,
+    "groups": ["engineering", "payment-team", "all-employees"]
+  },
+  {
+    "user_id": "u007",
+    "name": "Grace Kim",
+    "email": "grace.kim@vendor-partner.example",
+    "department": "external",
+    "role": "contractor",
+    "employment_type": "contractor",
+    "external": true,
+    "groups": ["contractors"]
+  },
+  {
+    "user_id": "u008",
+    "name": "Henry Adeyemi",
+    "email": "henry.adeyemi@mockcorp.example",
+    "department": "hr",
+    "role": "hr_specialist",
+    "employment_type": "full_time",
+    "external": false,
+    "groups": ["all-employees"]
+  }
+]

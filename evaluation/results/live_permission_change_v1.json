@@ -1,0 +1,74 @@
+{
+  "version": "live_permission_change_v1",
+  "user_id": "u004",
+  "channel_id": "C-PAY",
+  "target_resource_id": "C-PAY:2026-09-24T14:05:00Z",
+  "query": "dual-write rollback surface one-way backfill PAY-104",
+  "before": {
+    "permission": {
+      "channel_id": "C-PAY",
+      "channel_name": "payment-migration",
+      "is_private": true,
+      "user_id": "u004",
+      "is_member": false,
+      "access_allowed": false,
+      "permission_source": "query_time_permission_store"
+    },
+    "returned_ids": [],
+    "target_returned": false
+  },
+  "grant": {
+    "response": {
+      "status": "success",
+      "action": "grant",
+      "actor_user_id": "u005",
+      "target_user_id": "u004",
+      "channel_id": "C-PAY",
+      "channel_name": "payment-migration",
+      "is_private": true,
+      "before_member": false,
+      "after_member": true,
+      "access_allowed": true,
+      "changed": true,
+      "query_time_enforced": true,
+      "reindex_required": false,
+      "persistence": "in_memory_until_reload_or_restart",
+      "audit_event_id": "192337d4-2a48-4f16-80f2-d785f10946ca"
+    },
+    "api_latency_ms": 31.998999882489443
+  },
+  "after": {
+    "permission": {
+      "channel_id": "C-PAY",
+      "channel_name": "payment-migration",
+      "is_private": true,
+      "user_id": "u004",
+      "is_member": true,
+      "access_allowed": true,
+      "permission_source": "query_time_permission_store"
+    },
+    "returned_ids": [
+      "C-PAY:2026-09-24T14:05:00Z",
+      "C-PAY:2026-09-24T13:52:00Z"
+    ],
+    "target_returned": true
+  },
+  "resource_count_before": 88,
+  "resource_count_after": 88,
+  "audit": {
+    "valid": true,
+    "event_count": 98,
+    "broken_line": null,
+    "reason": null
+  },
+  "checks": {
+    "denied_before_grant": true,
+    "target_absent_before": true,
+    "allowed_after_grant": true,
+    "target_present_after": true,
+    "resource_count_unchanged": true,
+    "reindex_not_required": true,
+    "audit_chain_valid": true
+  },
+  "passed": true
+}

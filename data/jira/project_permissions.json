@@ -1,0 +1,114 @@
+[
+  {
+    "projectKey": "PAY",
+    "projectName": "Payment Platform",
+    "permissionScheme": "PAY Default Permission Scheme",
+    "permissions": [
+      {
+        "permission": "BROWSE_PROJECTS",
+        "description": "Lets a holder view issues in this project. Issue-level security is applied afterwards and can still hide individual issues.",
+        "roles": ["Administrators", "Developers", "Users"]
+      },
+      {
+        "permission": "CREATE_ISSUES",
+        "roles": ["Administrators", "Developers", "Users"]
+      },
+      {
+        "permission": "EDIT_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      },
+      {
+        "permission": "ASSIGN_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      },
+      {
+        "permission": "TRANSITION_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      }
+    ]
+  },
+  {
+    "projectKey": "AUTH",
+    "projectName": "Authentication Service",
+    "permissionScheme": "AUTH Default Permission Scheme",
+    "permissions": [
+      {
+        "permission": "BROWSE_PROJECTS",
+        "description": "Lets a holder view issues in this project. Issue-level security is applied afterwards and can still hide individual issues.",
+        "roles": ["Administrators", "Developers", "Users"]
+      },
+      {
+        "permission": "CREATE_ISSUES",
+        "roles": ["Administrators", "Developers", "Users"]
+      },
+      {
+        "permission": "EDIT_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      },
+      {
+        "permission": "ASSIGN_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      },
+      {
+        "permission": "TRANSITION_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      }
+    ]
+  },
+  {
+    "projectKey": "SEC",
+    "projectName": "Security Engineering",
+    "permissionScheme": "SEC Restricted Permission Scheme",
+    "permissions": [
+      {
+        "permission": "BROWSE_PROJECTS",
+        "description": "Lets a holder view issues in this project. Issue-level security is applied afterwards and can still hide individual issues.",
+        "roles": ["Administrators", "Developers", "Users"]
+      },
+      {
+        "permission": "CREATE_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      },
+      {
+        "permission": "EDIT_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      },
+      {
+        "permission": "ASSIGN_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      },
+      {
+        "permission": "TRANSITION_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      }
+    ]
+  },
+  {
+    "projectKey": "DP",
+    "projectName": "Data Platform",
+    "permissionScheme": "DP Default Permission Scheme",
+    "permissions": [
+      {
+        "permission": "BROWSE_PROJECTS",
+        "description": "Lets a holder view issues in this project. Issue-level security is applied afterwards and can still hide individual issues.",
+        "roles": ["Administrators", "Developers", "Users"]
+      },
+      {
+        "permission": "CREATE_ISSUES",
+        "roles": ["Administrators", "Developers", "Users"]
+      },
+      {
+        "permission": "EDIT_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      },
+      {
+        "permission": "ASSIGN_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      },
+      {
+        "permission": "TRANSITION_ISSUES",
+        "roles": ["Administrators", "Developers"]
+      }
+    ]
+  }
+]

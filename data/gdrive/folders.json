@@ -1,0 +1,58 @@
+[
+  {
+    "id": "FOLDER-PAY",
+    "name": "Payment Migration",
+    "mimeType": "application/vnd.google-apps.folder",
+    "createdTime": "2026-09-14T09:00:00Z",
+    "parents": [],
+    "webViewLink": "https://mock.drive.local/folders/FOLDER-PAY"
+  },
+  {
+    "id": "FOLDER-AUTH",
+    "name": "Authentication",
+    "mimeType": "application/vnd.google-apps.folder",
+    "createdTime": "2026-09-18T11:00:00Z",
+    "parents": [],
+    "webViewLink": "https://mock.drive.local/folders/FOLDER-AUTH"
+  },
+  {
+    "id": "FOLDER-SEC",
+    "name": "Security",
+    "mimeType": "application/vnd.google-apps.folder",
+    "createdTime": "2026-01-10T09:00:00Z",
+    "parents": [],
+    "webViewLink": "https://mock.drive.local/folders/FOLDER-SEC"
+  },
+  {
+    "id": "FOLDER-FIN",
+    "name": "Finance",
+    "mimeType": "application/vnd.google-apps.folder",
+    "createdTime": "2026-01-10T09:05:00Z",
+    "parents": [],
+    "webViewLink": "https://mock.drive.local/folders/FOLDER-FIN"
+  },
+  {
+    "id": "FOLDER-HR",
+    "name": "HR",
+    "mimeType": "application/vnd.google-apps.folder",
+    "createdTime": "2026-01-06T09:00:00Z",
+    "parents": [],
+    "webViewLink": "https://mock.drive.local/folders/FOLDER-HR"
+  },
+  {
+    "id": "FOLDER-ENG",
+    "name": "Engineering Shared",
+    "mimeType": "application/vnd.google-apps.folder",
+    "createdTime": "2026-01-05T09:10:00Z",
+    "parents": [],
+    "webViewLink": "https://mock.drive.local/folders/FOLDER-ENG"
+  },
+  {
+    "id": "FOLDER-SHARED",
+    "name": "General / Company Shared",
+    "mimeType": "application/vnd.google-apps.folder",
+    "createdTime": "2026-01-05T09:15:00Z",
+    "parents": [],
+    "webViewLink": "https://mock.drive.local/folders/FOLDER-SHARED"
+  }
+]

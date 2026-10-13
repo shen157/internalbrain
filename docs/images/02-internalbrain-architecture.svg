@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrGray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7A8AA0"/></marker>
+    <marker id="arrBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6FA0DC"/></marker>
+    <marker id="arrGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0E9F6E"/></marker>
+    <marker id="arrOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E8891A"/></marker>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#D05656"/></marker>
+    <marker id="arrPurple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8B5CF6"/></marker>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- ============ TITLE ============ -->
+  <text x="960" y="44" text-anchor="middle" font-size="28" font-weight="700" fill="#16213A">InternalBrain — Permission-Aware Enterprise RAG Architecture</text>
+
+  <!-- ============ BANNER ============ -->
+  <rect x="40" y="68" width="1840" height="62" rx="12" fill="#16213A"/>
+  <text x="960" y="106" text-anchor="middle" font-size="22">
+    <tspan font-weight="800" fill="#FFFFFF">Permission → Retrieval → LLM</tspan>
+    <tspan fill="#8FA6D6">&#160;&#160;·&#160;&#160;</tspan>
+    <tspan fill="#D7E2F7">Authorization is applied before retrieval, not after generation.</tspan>
+  </text>
+
+  <!-- ============ TRUST BOUNDARY: ENTERPRISE DATA ============ -->
+  <rect x="40" y="160" width="380" height="815" rx="16" fill="#F7FAFF" stroke="#5B7A9F" stroke-width="2" stroke-dasharray="10 6"/>
+  <text x="60" y="190" font-size="17" font-weight="700" fill="#3B5B7F">Enterprise Data Boundary</text>
+  <text x="60" y="212" font-size="13" fill="#6B7C93">Synthetic source-shaped demo data</text>
+
+  <!-- source boxes -->
+  <g>
+    <rect x="90" y="250" width="280" height="64" rx="10" fill="#E8F1FF" stroke="#7FA9E8" stroke-width="1.5"/>
+    <text x="230" y="278" text-anchor="middle" font-size="17" font-weight="600" fill="#1B3A66">Confluence</text>
+    <text x="230" y="300" text-anchor="middle" font-size="12.5" fill="#5A77A0">Pages · Space &amp; page restrictions</text>
+  </g>
+  <g>
+    <rect x="90" y="350" width="280" height="64" rx="10" fill="#E8F1FF" stroke="#7FA9E8" stroke-width="1.5"/>
+    <text x="230" y="378" text-anchor="middle" font-size="17" font-weight="600" fill="#1B3A66">Jira</text>
+    <text x="230" y="400" text-anchor="middle" font-size="12.5" fill="#5A77A0">Issues · Roles · Security levels</text>
+  </g>
+  <g>
+    <rect x="90" y="450" width="280" height="64" rx="10" fill="#E8F1FF" stroke="#7FA9E8" stroke-width="1.5"/>
+    <text x="230" y="478" text-anchor="middle" font-size="17" font-weight="600" fill="#1B3A66">Slack</text>
+    <text x="230" y="500" text-anchor="middle" font-size="12.5" fill="#5A77A0">Channels &amp; membership</text>
+  </g>
+  <g>
+    <rect x="90" y="550" width="280" height="64" rx="10" fill="#E8F1FF" stroke="#7FA9E8" stroke-width="1.5"/>
+    <text x="230" y="578" text-anchor="middle" font-size="17" font-weight="600" fill="#1B3A66">Google Drive</text>
+    <text x="230" y="600" text-anchor="middle" font-size="12.5" fill="#5A77A0">Files · Folders &amp; permissions</text>
+  </g>
+  <text x="230" y="668" text-anchor="middle" font-size="12.5" fill="#8A94A6">Loaded locally · manually triggered sync</text>
+
+  <!-- ============ TRUST BOUNDARY: INTERNALBRAIN APP (L-shape) ============ -->
+  <path d="M 470,160 H 1500 V 450 H 1880 V 975 H 470 Z" fill="none" stroke="#0E9F6E" stroke-width="2.5" stroke-dasharray="12 7" stroke-linejoin="round"/>
+  <text x="490" y="192" font-size="17" font-weight="700" fill="#0B7A55">InternalBrain Application Boundary</text>
+
+  <!-- ============ DATA AND INDEXING LAYER ============ -->
+  <rect x="480" y="210" width="360" height="470" rx="12" fill="#F0F6FF" stroke="#B9D2F2"/>
+  <text x="660" y="236" text-anchor="middle" font-size="15" font-weight="700" fill="#2B5C9E">Data and Indexing Layer</text>
+
+  <g>
+    <rect x="500" y="252" width="320" height="66" rx="8" fill="#FFFFFF" stroke="#7FA9E8" stroke-width="1.5"/>
+    <text x="660" y="281" text-anchor="middle" font-size="16" font-weight="600" fill="#1B3A66">Source Connectors / Sync</text>
+    <text x="660" y="304" text-anchor="middle" font-size="12" fill="#5A77A0">Added / updated / removed detection</text>
+  </g>
+  <g>
+    <rect x="500" y="338" width="320" height="66" rx="8" fill="#FFFFFF" stroke="#7FA9E8" stroke-width="1.5"/>
+    <text x="660" y="367" text-anchor="middle" font-size="16" font-weight="600" fill="#1B3A66">Unified Resource Model</text>
+    <text x="660" y="390" text-anchor="middle" font-size="12" fill="#5A77A0">Normalized resources + metadata</text>
+  </g>
+  <g>
+    <rect x="500" y="424" width="320" height="66" rx="8" fill="#FFFFFF" stroke="#7FA9E8" stroke-width="1.5"/>
+    <text x="660" y="453" text-anchor="middle" font-size="16" font-weight="600" fill="#1B3A66">Permission Metadata</text>
+    <text x="660" y="476" text-anchor="middle" font-size="12" fill="#5A77A0">Users, groups, ACLs</text>
+  </g>
+  <g>
+    <rect x="500" y="510" width="320" height="66" rx="8" fill="#FFFFFF" stroke="#7FA9E8" stroke-width="1.5"/>
+    <text x="660" y="539" text-anchor="middle" font-size="16" font-weight="600" fill="#1B3A66">Search Index / Embeddings</text>
+    <text x="660" y="562" text-anchor="middle" font-size="12" fill="#5A77A0">Lexical state + MiniLM vectors</text>
+  </g>
+  <g>
+    <rect x="500" y="596" width="320" height="66" rx="8" fill="#FFFFFF" stroke="#7FA9E8" stroke-width="1.5"/>
+    <text x="660" y="625" text-anchor="middle" font-size="16" font-weight="600" fill="#1B3A66">Freshness / Incremental Updates</text>
+    <text x="660" y="648" text-anchor="middle" font-size="12" fill="#5A77A0">Fingerprint-based refresh</text>
+  </g>
+
+  <!-- sources -> connectors -->
+  <line x1="370" y1="282" x2="430" y2="282" stroke="#7FA9E8" stroke-width="1.5"/>
+  <line x1="370" y1="382" x2="430" y2="382" stroke="#7FA9E8" stroke-width="1.5"/>
+  <line x1="370" y1="482" x2="430" y2="482" stroke="#7FA9E8" stroke-width="1.5"/>
+  <line x1="370" y1="582" x2="430" y2="582" stroke="#7FA9E8" stroke-width="1.5"/>
+  <line x1="430" y1="282" x2="430" y2="582" stroke="#7FA9E8" stroke-width="1.5"/>
+  <line x1="430" y1="282" x2="497" y2="282" stroke="#6FA0DC" stroke-width="2" marker-end="url(#arrBlue)"/>
+
+  <!-- sync internal arrows -->
+  <line x1="660" y1="318" x2="660" y2="335" stroke="#6FA0DC" stroke-width="2" marker-end="url(#arrBlue)"/>
+  <line x1="660" y1="404" x2="660" y2="421" stroke="#6FA0DC" stroke-width="2" marker-end="url(#arrBlue)"/>
+  <path d="M 820,371 H 845 V 543 H 823" fill="none" stroke="#6FA0DC" stroke-width="2" marker-end="url(#arrBlue)"/>
+  <line x1="660" y1="596" x2="660" y2="579" stroke="#6FA0DC" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrBlue)"/>
+
+  <!-- ============ ONLINE QUERY PIPELINE ============ -->
+  <rect x="930" y="210" width="440" height="650" rx="12" fill="#F0FAF6" stroke="#A7DCC8"/>
+  <text x="1150" y="236" text-anchor="middle" font-size="15" font-weight="700" fill="#0B7A55">Online Query Pipeline</text>
+
+  <g>
+    <rect x="980" y="252" width="340" height="56" rx="9" fill="#FFFFFF" stroke="#7FA9E8" stroke-width="1.8"/>
+    <circle cx="1005" cy="280" r="14" fill="#2B7FD4"/><text x="1005" y="285" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">1</text>
+    <text x="1165" y="286" text-anchor="middle" font-size="16" font-weight="600" fill="#1B3A66">Streamlit Web UI</text>
+  </g>
+  <g>
+    <rect x="980" y="328" width="340" height="56" rx="9" fill="#FFFFFF" stroke="#7FA9E8" stroke-width="1.8"/>
+    <circle cx="1005" cy="356" r="14" fill="#2B7FD4"/><text x="1005" y="361" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">2</text>
+    <text x="1165" y="362" text-anchor="middle" font-size="16" font-weight="600" fill="#1B3A66">FastAPI Backend</text>
+  </g>
+  <g>
+    <rect x="980" y="404" width="340" height="70" rx="9" fill="#FFFFFF" stroke="#7FA9E8" stroke-width="1.8"/>
+    <circle cx="1005" cy="439" r="14" fill="#2B7FD4"/><text x="1005" y="444" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">3</text>
+    <text x="1165" y="433" text-anchor="middle" font-size="16" font-weight="600" fill="#1B3A66">Acting User Identity</text>
+    <text x="1150" y="459" text-anchor="middle" font-size="11.5" fill="#8A94A6">Demo acting-user identity; production requires SSO/OIDC</text>
+  </g>
+  <g>
+    <rect x="980" y="494" width="340" height="56" rx="9" fill="#FFFFFF" stroke="#57B98B" stroke-width="1.8"/>
+    <circle cx="1005" cy="522" r="14" fill="#0E9F6E"/><text x="1005" y="527" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">4</text>
+    <text x="1165" y="528" text-anchor="middle" font-size="16" font-weight="600" fill="#0B5D3F">Input Safety Checks</text>
+  </g>
+  <g>
+    <rect x="980" y="570" width="340" height="60" rx="9" fill="#E3F7EE" stroke="#0E9F6E" stroke-width="3"/>
+    <circle cx="1005" cy="600" r="14" fill="#0B7A55"/><text x="1005" y="605" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">5</text>
+    <text x="1165" y="607" text-anchor="middle" font-size="16.5" font-weight="700" fill="#0B5D3F">Source-Native Permission Engine</text>
+  </g>
+  <g>
+    <rect x="980" y="650" width="340" height="56" rx="9" fill="#E3F7EE" stroke="#0E9F6E" stroke-width="2"/>
+    <circle cx="1005" cy="678" r="14" fill="#0B7A55"/><text x="1005" y="683" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">6</text>
+    <text x="1165" y="684" text-anchor="middle" font-size="16.5" font-weight="700" fill="#0B5D3F">Authorized Resource Pool</text>
+  </g>
+  <g>
+    <rect x="950" y="726" width="400" height="124" rx="10" fill="#FFFFFF" stroke="#57B98B" stroke-width="1.5"/>
+    <text x="1150" y="750" text-anchor="middle" font-size="15" font-weight="700" fill="#0B5D3F">7 · Hybrid Retrieval</text>
+    <rect x="965" y="762" width="100" height="44" rx="7" fill="#F0F6FF" stroke="#7FA9E8"/>
+    <text x="1015" y="789" text-anchor="middle" font-size="14" font-weight="600" fill="#1B3A66">BM25</text>
+    <rect x="1080" y="762" width="140" height="44" rx="7" fill="#F0F6FF" stroke="#7FA9E8"/>
+    <text x="1150" y="782" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1B3A66">MiniLM</text>
+    <text x="1150" y="798" text-anchor="middle" font-size="11.5" fill="#5A77A0">semantic retrieval</text>
+    <rect x="1235" y="762" width="100" height="44" rx="7" fill="#F0F6FF" stroke="#7FA9E8"/>
+    <text x="1285" y="789" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1B3A66">RRF Fusion</text>
+    <text x="1150" y="834" text-anchor="middle" font-size="12" fill="#4E7A66">Weighted Reciprocal Rank Fusion</text>
+  </g>
+
+  <!-- pipeline arrows -->
+  <line x1="1150" y1="308" x2="1150" y2="325" stroke="#0E9F6E" stroke-width="2.5" marker-end="url(#arrGreen)"/>
+  <line x1="1150" y1="384" x2="1150" y2="401" stroke="#0E9F6E" stroke-width="2.5" marker-end="url(#arrGreen)"/>
+  <line x1="1150" y1="474" x2="1150" y2="491" stroke="#0E9F6E" stroke-width="2.5" marker-end="url(#arrGreen)"/>
+  <line x1="1150" y1="550" x2="1150" y2="567" stroke="#0E9F6E" stroke-width="2.5" marker-end="url(#arrGreen)"/>
+  <line x1="1150" y1="630" x2="1150" y2="647" stroke="#0E9F6E" stroke-width="4" marker-end="url(#arrGreen)"/>
+  <line x1="1150" y1="706" x2="1150" y2="723" stroke="#0E9F6E" stroke-width="2.5" marker-end="url(#arrGreen)"/>
+
+  <!-- permission metadata -> permission engine ; index -> hybrid retrieval -->
+  <path d="M 820,457 H 905 V 600 H 947" fill="none" stroke="#0E9F6E" stroke-width="2.5" marker-end="url(#arrGreen)"/>
+  <path d="M 820,543 H 885 V 788 H 947" fill="none" stroke="#6FA0DC" stroke-width="2" marker-end="url(#arrBlue)"/>
+
+  <!-- ============ TRUST BOUNDARY: EXTERNAL LLM ============ -->
+  <rect x="1505" y="430" width="355" height="180" rx="14" fill="#FFFBF4" stroke="#E8891A" stroke-width="2" stroke-dasharray="10 6"/>
+  <text x="1525" y="458" font-size="14" font-weight="700" fill="#B96A10">External LLM Boundary</text>
+  <g>
+    <rect x="1530" y="480" width="305" height="76" rx="10" fill="#FDEBD3" stroke="#E8891A" stroke-width="2"/>
+    <circle cx="1562" cy="518" r="14" fill="#E8891A"/><text x="1562" y="523" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">8</text>
+    <text x="1695" y="516" text-anchor="middle" font-size="17" font-weight="700" fill="#8C5410">Tencent TokenHub LLM</text>
+    <text x="1695" y="540" text-anchor="middle" font-size="12" fill="#A97B3F">Remote generation</text>
+  </g>
+  <text x="1682" y="642" text-anchor="middle" font-size="13.5" font-style="italic" fill="#0B5D3F">Only authorized context is sent to the LLM.</text>
+
+  <!-- ============ POST-LLM SAFETY + OUTCOMES ============ -->
+  <g>
+    <rect x="1520" y="668" width="320" height="64" rx="10" fill="#FFFFFF" stroke="#57B98B" stroke-width="2"/>
+    <circle cx="1552" cy="700" r="14" fill="#0E9F6E"/><text x="1552" y="705" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">9</text>
+    <text x="1697" y="696" text-anchor="middle" font-size="15.5" font-weight="600" fill="#0B5D3F">Citation Validation</text>
+    <text x="1697" y="717" text-anchor="middle" font-size="15.5" font-weight="600" fill="#0B5D3F">and Output Safety</text>
+  </g>
+  <g>
+    <rect x="1520" y="772" width="320" height="64" rx="10" fill="#E3F7EE" stroke="#0E9F6E" stroke-width="2"/>
+    <circle cx="1552" cy="804" r="14" fill="#0B7A55"/><text x="1552" y="809" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">10</text>
+    <text x="1697" y="800" text-anchor="middle" font-size="16.5" font-weight="700" fill="#0B5D3F">Answer with Citations</text>
+    <text x="1697" y="822" text-anchor="middle" font-size="11.5" fill="#4E7A66">Grounded, validated references</text>
+  </g>
+  <g>
+    <rect x="1520" y="876" width="320" height="64" rx="10" fill="#FBEDEC" stroke="#D05656" stroke-width="2"/>
+    <text x="1680" y="904" text-anchor="middle" font-size="16" font-weight="700" fill="#A03A3A">or Safe Abstention</text>
+    <text x="1680" y="926" text-anchor="middle" font-size="12" fill="#B06A6A">(non-disclosing response)</text>
+  </g>
+
+  <!-- right column arrows -->
+  <path d="M 1350,794 H 1470 V 518 H 1526" fill="none" stroke="#0E9F6E" stroke-width="2.5" marker-end="url(#arrGreen)"/>
+  <line x1="1680" y1="556" x2="1680" y2="664" stroke="#E8891A" stroke-width="2" marker-end="url(#arrOrange)"/>
+  <line x1="1680" y1="732" x2="1680" y2="768" stroke="#0E9F6E" stroke-width="2" marker-end="url(#arrGreen)"/>
+  <path d="M 1840,700 H 1870 V 935 H 1844" fill="none" stroke="#D05656" stroke-width="2" marker-end="url(#arrRed)"/>
+
+  <!-- ============ PERMISSION ENGINE ZONE ============ -->
+  <rect x="480" y="730" width="360" height="232" rx="12" fill="#E9F7F0" stroke="#57B98B" stroke-width="1.5"/>
+  <text x="660" y="760" text-anchor="middle" font-size="16" font-weight="700" fill="#0B5D3F">Permission Engine</text>
+  <text x="505" y="792" font-size="12.5" fill="#1F5C46">User identity · Group membership · Resource ACL</text>
+  <text x="505" y="814" font-size="12.5" fill="#1F5C46">Slack channel membership</text>
+  <text x="505" y="836" font-size="12.5" fill="#1F5C46">Live grant / revoke</text>
+  <text x="505" y="864" font-size="12.5" font-weight="700" fill="#0B5D3F">Permission changes take effect on the next query</text>
+  <text x="505" y="886" font-size="12.5" font-weight="700" fill="#0B5D3F">No re-indexing or re-embedding required</text>
+  <text x="505" y="910" font-size="12" fill="#4E7A66">Reviewer-only administration (compliance role)</text>
+  <path d="M 480,780 H 460 V 457 H 497" fill="none" stroke="#0E9F6E" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrGreen)"/>
+
+  <!-- ============ AUDIT AND OBSERVABILITY ============ -->
+  <rect x="880" y="870" width="620" height="92" rx="12" fill="#F5F0FB" stroke="#A78BDB" stroke-width="1.5"/>
+  <text x="898" y="893" font-size="14.5" font-weight="700" fill="#5B3E93">Audit and Observability</text>
+  <text x="898" y="914" font-size="11.5" fill="#4E3D75">Query ID · User ID · Retrieved resource IDs · Permission decisions</text>
+  <text x="898" y="932" font-size="11.5" fill="#4E3D75">Safety decisions · Citation / abstention result · Tamper detection</text>
+  <rect x="898" y="938" width="230" height="19" rx="6" fill="#FFFFFF" stroke="#A78BDB"/>
+  <text x="1013" y="952" text-anchor="middle" font-size="11" font-weight="600" fill="#5B3E93">SHA-256 Chained Audit Trail</text>
+  <rect x="1140" y="938" width="120" height="19" rx="6" fill="#FFFFFF" stroke="#A78BDB"/>
+  <text x="1200" y="952" text-anchor="middle" font-size="11" font-weight="600" fill="#5B3E93">Audit Inquiry</text>
+
+  <!-- dotted audit event arrows -->
+  <line x1="840" y1="890" x2="876" y2="890" stroke="#8B5CF6" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrPurple)"/>
+  <path d="M 1320,356 H 1395 V 866" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrPurple)"/>
+  <path d="M 1520,820 H 1480 V 866" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrPurple)"/>
+
+  <!-- ============ LEGEND ============ -->
+  <g font-size="13" fill="#3B4A66">
+    <rect x="587" y="1002" width="16" height="16" rx="4" fill="#E8F1FF" stroke="#7FA9E8"/><text x="611" y="1015">Enterprise sources</text>
+    <rect x="757" y="1002" width="16" height="16" rx="4" fill="#E3F7EE" stroke="#0E9F6E"/><text x="781" y="1015">Permission &amp; safety</text>
+    <rect x="934" y="1002" width="16" height="16" rx="4" fill="#F5F0FB" stroke="#A78BDB"/><text x="958" y="1015">Audit</text>
+    <rect x="1030" y="1002" width="16" height="16" rx="4" fill="#FDEBD3" stroke="#E8891A"/><text x="1054" y="1015">External LLM</text>
+    <rect x="1176" y="1002" width="16" height="16" rx="4" fill="#FBEDEC" stroke="#D05656"/><text x="1200" y="1015">Blocked / abstention</text>
+  </g>
+  <text x="960" y="1048" text-anchor="middle" font-size="12" fill="#8A94A6">Synthetic demo data · Demo acting-user identity — production requires SSO/OIDC · Local audit chain is tamper-evident</text>
+</svg>

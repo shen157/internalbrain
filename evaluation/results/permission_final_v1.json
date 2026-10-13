@@ -1,0 +1,514 @@
+{
+  "version": "permission_final_v1",
+  "suite": "InternalBrain permission evaluation cases",
+  "total_cases": 50,
+  "passed_cases": 50,
+  "permission_accuracy": 1.0,
+  "true_allow": 30,
+  "true_deny": 20,
+  "false_allow": 0,
+  "false_deny": 0,
+  "false_allow_rate": 0.0,
+  "results": [
+    {
+      "id": "conf-01",
+      "platform": "confluence",
+      "resource_id": "CONF-PAY-002",
+      "user_id": "u001",
+      "feature": "group permission plus space access",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "conf-02",
+      "platform": "confluence",
+      "resource_id": "CONF-PAY-001",
+      "user_id": "u007",
+      "feature": "contractor via space group",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "conf-03",
+      "platform": "confluence",
+      "resource_id": "CONF-PAY-002",
+      "user_id": "u007",
+      "feature": "space ok, page restriction blocks contractor",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "conf-04",
+      "platform": "confluence",
+      "resource_id": "CONF-SEC-001",
+      "user_id": "u002",
+      "feature": "security-team restricted page",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "conf-05",
+      "platform": "confluence",
+      "resource_id": "CONF-SEC-001",
+      "user_id": "u005",
+      "feature": "space ok via direct user, page restriction blocks",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "conf-06",
+      "platform": "confluence",
+      "resource_id": "CONF-SEC-002",
+      "user_id": "u005",
+      "feature": "direct user page restriction",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "conf-07",
+      "platform": "confluence",
+      "resource_id": "CONF-FIN-001",
+      "user_id": "u004",
+      "feature": "leadership group",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "conf-08",
+      "platform": "confluence",
+      "resource_id": "CONF-FIN-002",
+      "user_id": "u003",
+      "feature": "space ok via leadership, restriction finance only",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "conf-09",
+      "platform": "confluence",
+      "resource_id": "CONF-HR-001",
+      "user_id": "u008",
+      "feature": "broadly accessible company content",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "conf-10",
+      "platform": "confluence",
+      "resource_id": "CONF-HR-001",
+      "user_id": "u007",
+      "feature": "contractor excluded from all-employees",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "conf-11",
+      "platform": "confluence",
+      "resource_id": "CONF-FIN-001",
+      "user_id": "u001",
+      "feature": "no finance space access",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "conf-12",
+      "platform": "confluence",
+      "resource_id": "CONF-PAY-003",
+      "user_id": "u006",
+      "feature": "direct user restriction",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "conf-13",
+      "platform": "confluence",
+      "resource_id": "CONF-FIN-003",
+      "user_id": "u003",
+      "feature": "leadership-only page",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "conf-14",
+      "platform": "confluence",
+      "resource_id": "CONF-FIN-003",
+      "user_id": "u001",
+      "feature": "leadership-only page, requester not leadership",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "jira-01",
+      "platform": "jira",
+      "resource_id": "PAY-103",
+      "user_id": "u002",
+      "feature": "PAY Developers role for the assignee",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "jira-02",
+      "platform": "jira",
+      "resource_id": "PAY-102",
+      "user_id": "u002",
+      "feature": "PAY Developers role",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "jira-03",
+      "platform": "jira",
+      "resource_id": "AUTH-201",
+      "user_id": "u001",
+      "feature": "engineering group role",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "jira-04",
+      "platform": "jira",
+      "resource_id": "AUTH-202",
+      "user_id": "u001",
+      "feature": "issue security blocks project member",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "jira-05",
+      "platform": "jira",
+      "resource_id": "SEC-006",
+      "user_id": "u005",
+      "feature": "security level direct user",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "jira-06",
+      "platform": "jira",
+      "resource_id": "SEC-004",
+      "user_id": "u005",
+      "feature": "security level blocks compliance officer",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "jira-07",
+      "platform": "jira",
+      "resource_id": "PAY-101",
+      "user_id": "u007",
+      "feature": "direct Developer role for contractor",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "jira-08",
+      "platform": "jira",
+      "resource_id": "SEC-004",
+      "user_id": "u007",
+      "feature": "contractor blocked by issue security",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "jira-09",
+      "platform": "jira",
+      "resource_id": "SEC-004",
+      "user_id": "u008",
+      "feature": "browse allowed, issue security blocks",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "jira-10",
+      "platform": "jira",
+      "resource_id": "PAY-101",
+      "user_id": "u004",
+      "feature": "no PAY project access",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "jira-11",
+      "platform": "jira",
+      "resource_id": "SEC-007",
+      "user_id": "u008",
+      "feature": "all-employees browse, no issue security",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "jira-12",
+      "platform": "jira",
+      "resource_id": "DP-301",
+      "user_id": "u001",
+      "feature": "engineering group role in DP",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "jira-13",
+      "platform": "jira",
+      "resource_id": "DP-301",
+      "user_id": "u004",
+      "feature": "no DP project access",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "slack-01",
+      "platform": "slack",
+      "resource_id": "C-PAY",
+      "user_id": "u001",
+      "feature": "private channel member",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "slack-02",
+      "platform": "slack",
+      "resource_id": "C-PAY",
+      "user_id": "u004",
+      "feature": "not a member",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "slack-03",
+      "platform": "slack",
+      "resource_id": "C-SEC",
+      "user_id": "u005",
+      "feature": "not a member",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "slack-04",
+      "platform": "slack",
+      "resource_id": "C-SEC",
+      "user_id": "u002",
+      "feature": "member",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "slack-05",
+      "platform": "slack",
+      "resource_id": "C-ENG",
+      "user_id": "u008",
+      "feature": "public channel, non-member",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "slack-06",
+      "platform": "slack",
+      "resource_id": "C-GEN",
+      "user_id": "u007",
+      "feature": "public channel plus member",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "gdrive-01",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-PAY-001",
+      "user_id": "u007",
+      "feature": "direct user file permission",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "gdrive-02",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-PAY-002",
+      "user_id": "u001",
+      "feature": "direct group file permission",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "gdrive-03",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-PAY-004",
+      "user_id": "u003",
+      "feature": "parent folder group permission inherited",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "gdrive-04",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-SHARED-001",
+      "user_id": "u007",
+      "feature": "parent folder user permission inherited",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "gdrive-05",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-FIN-002",
+      "user_id": "u001",
+      "feature": "no direct or inherited permission",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "gdrive-06",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-SEC-001",
+      "user_id": "u007",
+      "feature": "contractor vs protected folder",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "gdrive-07",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-SEC-001",
+      "user_id": "u002",
+      "feature": "security-team folder child",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "gdrive-08",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-SEC-001",
+      "user_id": "u001",
+      "feature": "non-security user, security folder child",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "gdrive-09",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-FIN-002",
+      "user_id": "u003",
+      "feature": "leadership folder inheritance",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "gdrive-10",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-FIN-003",
+      "user_id": "u003",
+      "feature": "folder access but stricter child, inheritance broken",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "gdrive-11",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-FIN-003",
+      "user_id": "u004",
+      "feature": "owner of stricter child",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "gdrive-12",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-SEC-002",
+      "user_id": "u005",
+      "feature": "direct user reader",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "gdrive-13",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-HR-001",
+      "user_id": "u007",
+      "feature": "not all-employees, no direct grant",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "gdrive-14",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-HR-001",
+      "user_id": "u008",
+      "feature": "all-employees group",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "gdrive-15",
+      "platform": "gdrive",
+      "resource_id": "GDRIVE-ENG-001",
+      "user_id": "u007",
+      "feature": "contractors group reader",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    },
+    {
+      "id": "gdrive-16",
+      "platform": "gdrive",
+      "resource_id": "FOLDER-SEC",
+      "user_id": "u007",
+      "feature": "contractor, protected folder",
+      "expected": "DENY",
+      "actual": "DENY",
+      "passed": true
+    },
+    {
+      "id": "gdrive-17",
+      "platform": "gdrive",
+      "resource_id": "FOLDER-SEC",
+      "user_id": "u002",
+      "feature": "security-team folder access",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "passed": true
+    }
+  ]
+}

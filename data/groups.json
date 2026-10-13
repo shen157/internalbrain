@@ -1,0 +1,58 @@
+[
+  {
+    "group_id": "engineering",
+    "name": "Engineering",
+    "kind": "department",
+    "description": "All internal engineers across backend, platform and security engineering.",
+    "members": ["u001", "u002", "u003", "u006"]
+  },
+  {
+    "group_id": "payment-team",
+    "name": "Payment Platform Team",
+    "kind": "project_team",
+    "description": "Cross-functional team delivering the payment platform migration project (PAY).",
+    "members": ["u001", "u003", "u006"]
+  },
+  {
+    "group_id": "security-team",
+    "name": "Security Engineering Team",
+    "kind": "team",
+    "description": "Owns incident response, privileged access review and security tooling.",
+    "members": ["u002"]
+  },
+  {
+    "group_id": "finance",
+    "name": "Finance",
+    "kind": "department",
+    "description": "Financial planning, budgeting and vendor spend management.",
+    "members": ["u004"]
+  },
+  {
+    "group_id": "compliance",
+    "name": "Compliance and Risk",
+    "kind": "department",
+    "description": "Regulatory compliance, audit evidence collection and internal risk reviews.",
+    "members": ["u005"]
+  },
+  {
+    "group_id": "leadership",
+    "name": "Leadership",
+    "kind": "management",
+    "description": "Department leads with visibility into cross-functional planning and budget.",
+    "members": ["u003", "u004", "u005"]
+  },
+  {
+    "group_id": "all-employees",
+    "name": "All Employees",
+    "kind": "org_wide",
+    "description": "Every internal full-time employee. External contractors are intentionally excluded.",
+    "members": ["u001", "u002", "u003", "u004", "u005", "u006", "u008"]
+  },
+  {
+    "group_id": "contractors",
+    "name": "External Contractors",
+    "kind": "external",
+    "description": "External contractors with time-boxed, scoped access only.",
+    "members": ["u007"]
+  }
+]

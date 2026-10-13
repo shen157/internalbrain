@@ -1,0 +1,113 @@
+{
+  "project": "InternalBrain",
+  "version": "backend_final_v1",
+  "backend_accepted": true,
+  "acceptance_checks": {
+    "passed": 22,
+    "total": 22,
+    "results": {
+      "permission_accuracy_100": true,
+      "false_allow_rate_zero": true,
+      "retrieval_recall_at_5_100": true,
+      "retrieval_hit_at_5_100": true,
+      "retrieval_mrr_1": true,
+      "unauthorized_retrieval_zero": true,
+      "safety_holdout_100": true,
+      "attack_block_rate_100": true,
+      "benign_pass_rate_100": true,
+      "e2e_accuracy_100": true,
+      "e2e_source_hit_100": true,
+      "live_permission_passed": true,
+      "permission_no_reindex": true,
+      "permission_propagation_100": true,
+      "audit_trace_complete": true,
+      "audit_acceptance_passed": true,
+      "authorization_p95_under_5ms": true,
+      "retrieval_p95_under_2s": true,
+      "backend_e2e_p95_under_2s": true,
+      "permission_propagation_p95_under_1s": true,
+      "audit_query_p95_under_10ms": true,
+      "real_llm_no_failures": true
+    }
+  },
+  "dataset": {
+    "searchable_resources": 88,
+    "sources": [
+      "Confluence",
+      "Jira",
+      "Slack",
+      "Google Drive"
+    ]
+  },
+  "permission": {
+    "evaluation_cases": 50,
+    "accuracy": 1.0,
+    "false_allow_rate": 0.0,
+    "result_file": "permission_final_v1.json"
+  },
+  "retrieval_holdout": {
+    "cases": 15,
+    "positive_cases": 11,
+    "negative_cases": 4,
+    "recall_at_5": 1.0,
+    "hit_at_5": 1.0,
+    "mrr": 1.0,
+    "unauthorized_retrieval_rate": 0.0,
+    "negative_case_accuracy": 0.75
+  },
+  "safety_holdout": {
+    "cases": 16,
+    "accuracy": 1.0,
+    "attack_block_rate": 1.0,
+    "benign_pass_rate": 1.0,
+    "false_positive_rate": 0.0
+  },
+  "e2e_pipeline": {
+    "cases": 13,
+    "passed": 13,
+    "accuracy": 1.0,
+    "expected_source_hit_rate": 1.0,
+    "llm_note": "Deterministic test double used for reproducible pipeline validation."
+  },
+  "live_permission_change": {
+    "passed": true,
+    "resource_count_unchanged": true,
+    "reindex_required": false,
+    "grant_api_p50_ms": 19.392349990084767,
+    "grant_api_p95_ms": 25.17078994424082,
+    "grant_to_retrievable_p50_ms": 400.12495004339144,
+    "grant_to_retrievable_p95_ms": 447.38062998512754,
+    "propagation_success_rate": 1.0
+  },
+  "latency": {
+    "measurement_note": "Warm/steady-state local backend benchmark; second run retained.",
+    "authorization_p50_ms": 0.1993000041693449,
+    "authorization_p95_ms": 0.3011099703144282,
+    "hybrid_retrieval_p50_ms": 830.6527000386268,
+    "hybrid_retrieval_p95_ms": 940.2185800718144,
+    "backend_e2e_without_remote_llm_p50_ms": 1047.9088999563828,
+    "backend_e2e_without_remote_llm_p95_ms": 1094.0012800158001,
+    "backend_e2e_success_rate": 1.0,
+    "real_llm_e2e": {
+      "latency": {
+        "count": 10,
+        "min_ms": 4399.092599982396,
+        "mean_ms": 7140.698810003232,
+        "p50_ms": 6856.785950018093,
+        "p95_ms": 9786.073000036413,
+        "max_ms": 9909.453100059181
+      },
+      "successful_requests": 10,
+      "measured_requests": 10,
+      "failure_count": 0,
+      "failures": [],
+      "includes_remote_llm": true
+    }
+  },
+  "audit": {
+    "trace_completeness": 1.0,
+    "inquiry_p50_ms": 0.9171499405056238,
+    "inquiry_p95_ms": 1.359545043669641,
+    "passed": true
+  }
+}
