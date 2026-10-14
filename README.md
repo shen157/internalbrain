@@ -40,7 +40,7 @@ Authorization is therefore part of retrieval itself, not a post-processing step.
 | Validated citations | Returned citations must refer to supplied authorized context |
 | Safe abstention | Missing, irrelevant, and inaccessible content produces a non-disclosing response |
 | Prompt-injection defense | Input, retrieved-content, and output safety stages |
-| Live permission updates | Permission changes affect the next query without re-indexing |
+| Live permission updates | Permission changes affect the next query without an explicit index rebuild |
 | Tamper-evident audit | SHA-256 chained events plus filtered audit inquiry |
 | Reviewer controls | Audit, synchronization, and permission management are restricted to the compliance role |
 
@@ -88,7 +88,7 @@ flowchart TB
 
     PS[Permission Store] --> PE
     PC[Reviewer Permission Change] --> PS
-    PC -. no re-index required .-> PE
+    PC -. no explicit index rebuild .-> PE
 ~~~
 
 The detailed architecture, trust boundaries, and control flows are documented in [docs/architecture.md](docs/architecture.md).
@@ -133,7 +133,7 @@ Grant  -> C-PAY becomes retrievable on the next query
 Revoke -> query safely abstains again
 ~~~
 
-The searchable resource count remains unchanged because permissions are evaluated at query time. No re-embedding or index rebuild is required. Every change records the reviewer, target user, resource, action, result, and audit event ID.
+The searchable resource count remains unchanged because permissions are evaluated at query time. No explicit index rebuild is triggered by a permission change; the updated authorization state is applied to the next query. Every change records the reviewer, target user, resource, action, result, and audit event ID.
 
 ## Auditability
 
@@ -333,9 +333,10 @@ internalbrain/
 - All included enterprise records and identities are synthetic demo data.
 - Connectors read the bundled source-shaped datasets; production connector authentication, webhooks, and rate-limit handling are outside this prototype.
 - Content synchronization is manually triggered and uses fingerprint-based added/updated/removed detection.
-- Permission updates are enforced immediately after InternalBrain receives the change; the prototype does not claim source-platform webhook latency.
+- Permission updates are enforced at query time after InternalBrain receives the change; no explicit index rebuild is triggered. The prototype does not claim source-platform webhook or connector propagation latency.
 - Demo identity is supplied by an application header and must be replaced by verified enterprise authentication in production.
 - Audit chaining is tamper-evident, not an external immutable ledger.
+- The prototype performs in-memory authorization filtering and retrieval over 88 searchable resources. A production-scale deployment would use ACL-aware indexed retrieval, precomputed embeddings, and an enterprise search or vector-store backend rather than rebuilding retrieval state per request.
 - Benchmark results describe the recorded test environment and are not production SLA guarantees.
 
 ## Submission material
